@@ -2,6 +2,9 @@ npm init -y : create packege.json without any questions
 npm ls : Show all package installed
 npm ls --all This shows the dependency tree of the current project.
 npm view <package-name> versions --json: list all available versions of a specific npm package
+npm view <package-name> dependencies : show all dependencies
+npm install <package-name>@latest : last versin of a package
+npm view <package-name> peerDependencies: dependencies
 npm init -y && npm install <package-name> : && use for do two commands in one line 
 
 

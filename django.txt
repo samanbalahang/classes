@@ -1,0 +1,3 @@
+python -m venv .venv =>Create venv
+Ctrl+Shift+P > Python: Select Interpreter 
+py -m pip install Django 

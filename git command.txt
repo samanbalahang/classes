@@ -1,0 +1,19 @@
+git help -a
+git --help
+git help -g
+git init	Initialize a new Git repo
+git clone <url>	Clone a remote repository
+git add <file>	Stage changes for commit
+git commit -m "msg"	Commit staged changes
+git status	Show working tree status
+git log	View commit history
+git diff	Show changes between commits/staging
+git branch	List/create branches
+git checkout <branch>	Switch branches
+git merge <branch>	Merge a branch into current branch
+git pull	Fetch + merge from remote
+git push	Push commits to remote
+git remote -v	List remote repositories
+git reset <file>	Unstage changes
+git stash	Temporarily save uncommitted changes
+git tag	Manage tags (mark releases)

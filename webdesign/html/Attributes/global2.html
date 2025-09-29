@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box warning active" id="main-box">محتوا</div>
+        <div data-product-id="456" data-price="29.99" data-category="electronics">
+            محصول
+        </div>
+
+
+    <button aria-expanded="false" aria-controls="menu">منو</button>
+    <div id="menu" aria-hidden="true">محتوای منو</div>
+
+    <!-- دسترسی در JavaScript -->
+    <script>
+        const element = document.querySelector('div');
+        console.log(element.dataset.productId); // "456"
+    </script>
+
+</body>
+
+</html>

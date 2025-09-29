@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* حذف فاصله و نشانگر پیش‌فرض */
+        ul.custom-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* نشانگرهای سفارشی */
+        ul.custom-list li::before {
+            content: "✓ ";
+            color: green;
+            font-weight: bold;
+        }
+
+        /* لیست افقی برای منوها */
+        ul.horizontal-list {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <ol class="custom-list">
+        <li>آیتم اول</li>
+        <li>آیتم دوم</li>
+        <li>آیتم سوم</li>
+    </ol>
+    <ol class="horizontal-list">
+        <li>آیتم اول</li>
+        <li>آیتم دوم</li>
+        <li>آیتم سوم</li>
+    </ol>
+</body>
+
+</html>

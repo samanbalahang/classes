@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Generator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .description {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #555;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .form-container {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+    }
+
+    label {
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    input {
+      padding: 12px 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    input:focus {
+      border-color: #3498db;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+
+    button {
+      background: linear-gradient(to right, #3498db, #2980b9);
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(to right, #2980b9, #2573a7);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+    }
+
+    th {
+      background: linear-gradient(to bottom, #3498db, #2980b9);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    td {
+      padding: 15px;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    tr:hover td {
+      background-color: #e3f2fd;
+      transform: scale(1.02);
+    }
+
+    .instructions {
+      background: #e8f4fc;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      border-left: 5px solid #3498db;
+    }
+
+    .instructions h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .instructions ul {
+      padding-left: 20px;
+    }
+
+    .instructions li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .error {
+      color: #e74c3c;
+      text-align: center;
+      margin-top: 15px;
+      font-weight: 600;
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .input-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .input-container {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Table Generator</h1>
+
+  <p class="description">
+    Enter the number of rows and columns to generate a custom table with numbered cells.
+  </p>
+
+  <form id="tableForm" class="form-container">
+    <div class="input-group">
+      <div class="input-container">
+        <label for="rowCount">Number of Rows:</label>
+        <input type="number" id="rowCount" name="rowCount" min="1" max="20" value="5" placeholder="Enter rows">
+      </div>
+
+      <div class="input-container">
+        <label for="columnCount">Number of Columns:</label>
+        <input type="number" id="columnCount" name="columnCount" min="1" max="10" value="4" placeholder="Enter columns">
+      </div>
+    </div>
+
+    <button type="submit">Generate Table</button>
+    <div id="error" class="error"></div>
+  </form>
+
+  <div class="table-container">
+    <table id="generatedTable">
+      <!-- Table will be generated here -->
+    </table>
+  </div>
+<div id="app">
+
+</div>
+  <form action="#" id="form">
+    <label for="rows">
+      سطرها
+    </label>
+    <input type="text" name="rows"><br>
+    <label for="columns">
+      ستون ها
+    </label>
+    <input type="text" name="columns"><br>
+    <input type="submit" value="درج">
+  </form>
+  <div class="instructions">
+    <h3>How to use:</h3>
+    <ul>
+      <li>Enter the number of rows (1-20) and columns (1-10) you want in your table</li>
+      <li>Click the "Generate Table" button</li>
+      <li>The table will be created with numbered cells from 1 to (rows × columns)</li>
+      <li>Hover over table rows to see interactive effects</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const forms = document.getElementById("form");
+    const form = document.getElementById('tableForm');
+    const table = document.getElementById('generatedTable');
+    const errorDiv = document.getElementById('error');
+    const app  =  document.getElementById("app");
+    const newTable = document.createElement("table");
+    let trs;
+    let tds;
+    forms.addEventListener("submit",e=>
+    {
+      e.preventDefault();
+      const rows = parseInt(e.target.rows.value);
+      const columns = parseInt(e.target.columns.value);
+      console.log(!isNaN(rows) && !isNaN(columns))
+      if (!isNaN(rows) && !isNaN(columns)) {
+        for (let r = 0; r < rows; r++) {
+          trs = document.createElement("tr");
+          for (let col = 0; col < columns; col++) {
+            tds = document.createElement("td");
+            console.log("r:" , r);
+            console.log("columns: " , columns);
+            console.log("col: " , col);
+            console.log("(r * columns) + col + 1: " , (r * columns) + col + 1);
+            tds.textContent = (r * columns) + col + 1;
+            trs.append(tds);
+          }
+          newTable.append(trs);
+        }
+        app.append(newTable);
+      }
+    });
+    // Handle form submission
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Get form data using FormData API
+      const formData = new FormData(form);
+      const rowCount = parseInt(formData.get('rowCount'));
+      const columnCount = parseInt(formData.get('columnCount'));
+
+      // Validate inputs
+      if (isNaN(rowCount) || isNaN(columnCount) || rowCount < 1 || columnCount < 1) {
+        errorDiv.textContent = 'Please enter valid numbers (greater than 0) for both rows and columns.';
+        errorDiv.style.display = 'block';
+        return;
+      }
+
+      if (rowCount > 20 || columnCount > 10) {
+        errorDiv.textContent = 'Maximum allowed: 20 rows and 10 columns.';
+        errorDiv.style.display = 'block';
+        return;
+      }
+
+      // Clear any previous error
+      errorDiv.style.display = 'none';
+
+      // Generate the table
+      generateTable(rowCount, columnCount);
+    });
+
+    // Generate the initial table on page load
+    generateTable(5, 4);
+
+    function generateTable(rows, columns) {
+      // Clear previous table
+      table.innerHTML = '';
+
+      // Create table header
+      const headerRow = document.createElement('tr');
+      for (let j = 0; j < columns; j++) {
+        const th = document.createElement('th');
+        th.textContent = `Column ${j + 1}`;
+        headerRow.appendChild(th);
+      }
+      table.appendChild(headerRow);
+
+      // Create table rows and cells with numbered content
+      let counter = 1;
+      for (let i = 0; i < rows; i++) {
+        const tr = document.createElement('tr');
+
+        for (let j = 0; j < columns; j++) {
+          const td = document.createElement('td');
+          // Using i and j to calculate the cell number
+          td.textContent = (i * columns) + j + 1;
+          tr.appendChild(td);
+        }
+
+        table.appendChild(tr);
+      }
+    }
+  });
+</script>
+</body>
+</html>

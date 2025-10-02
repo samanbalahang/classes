@@ -1,0 +1,6 @@
+div {
+    width: 300px; /* عرض محتوا */
+    padding: 20px; /* فاصله داخلی */
+    border: 5px solid black; /* حاشیه */
+    margin: 10px; /* فاصله خارجی */
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        بلاک و اینلاین
+    </title>
+    <style>
+        .block-example {
+            display: block;
+            background-color: lightblue;
+            margin: 10px 0;
+            /* حاشیه بالا و پایین دارد */
+            padding: 20px;
+            width: 80%;
+            /* عرض قابل تنظیم است */
+            height: 50px;
+            /* ارتفاع قابل تنظیم است */
+        }
+
+        .inline-example {
+            display: inline;
+            background-color: lightcoral;
+            margin: 0 20px;
+            /* فقط حاشیه چپ و راست دارد */
+            padding: 10px 20px;
+            /* پدینگ بالا و پایین دارد اما ممکن است همپوشانی کند */
+            /* width و height در اینجا کار نمی‌کنند */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="block-example">این یک دیو بلوکی است.</div>
+    <p class="block-example">این یک پاراگراف بلوکی دیگر است.</p>
+
+    <p>این یک پاراگراف است و <span class="inline-example">این یک اسپن درون‌خطی</span> است که در کنار متن قرار می‌گیرد.
+        <strong class="inline-example">این یک المان قوی درون‌خطی دیگر است.</strong>
+    </p>
+
+</body>
+
+</html>

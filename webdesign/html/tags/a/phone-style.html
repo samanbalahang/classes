@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            /* فقط نمایش روی دستگاه‌های تلفن */
+    @media (max-width: 768px) {
+    .phone-link {
+    display: block;
+    background: green;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    }
+    }
+
+    /* آیکون تلفن */
+    .phone-link::before {
+    content: "📞 ";
+    margin-left: 5px;
+    }
+    </style>
+</head>
+
+<body>
+  <a href="tel:02112345678" class="phone-link">02112345678</a>
+</body>
+
+</html>

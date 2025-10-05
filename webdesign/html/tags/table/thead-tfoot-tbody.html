@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول حرفه‌ای</title>
+    <style>
+        .professional-table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
+        }
+        
+        /* استایل سر جدول */
+        .professional-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .professional-table thead th {
+            padding: 15px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        
+        /* استایل بدنه جدول */
+        .professional-table tbody tr {
+            transition: background-color 0.3s ease;
+        }
+        
+        .professional-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .professional-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        
+        .professional-table tbody tr:hover {
+            background-color: #e3f2fd;
+            cursor: pointer;
+        }
+        
+        .professional-table tbody td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        /* استایل پاورقی جدول */
+        .professional-table tfoot {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .professional-table tfoot td {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .highlight {
+            background-color: #fff3cd !important;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <table class="professional-table">
+        <caption>گزارش مالی سه ماهه اول ۱۴۰۳</caption>
+        
+        <!-- سر جدول -->
+        <thead>
+            <tr>
+                <th>ماه</th>
+                <th>فروش (میلیون تومان)</th>
+                <th>هزینه (میلیون تومان)</th>
+                <th>سود خالص (میلیون تومان)</th>
+                <th>رشد (%)</th>
+            </tr>
+        </thead>
+        
+        <!-- پاورقی جدول -->
+        <tfoot>
+            <tr>
+                <td>جمع کل</td>
+                <td>۲,۸۵۰</td>
+                <td>۱,۹۰۰</td>
+                <td>۹۵۰</td>
+                <td>+۱۸٪</td>
+            </tr>
+        </tfoot>
+        
+        <!-- بدنه جدول -->
+        <tbody>
+            <tr>
+                <td>فروردین</td>
+                <td>۸۰۰</td>
+                <td>۶۰۰</td>
+                <td>۲۰۰</td>
+                <td>+۵٪</td>
+            </tr>
+            <tr class="highlight">
+                <td>اردیبهشت</td>
+                <td>۱,۱۰۰</td>
+                <td>۷۰۰</td>
+                <td>۴۰۰</td>
+                <td>+۲۵٪</td>
+            </tr>
+            <tr>
+                <td>خرداد</td>
+                <td>۹۵۰</td>
+                <td>۶۰۰</td>
+                <td>۳۵۰</td>
+                <td>+۱۵٪</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

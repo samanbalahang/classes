@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پخش کننده صوت</title>
+    <style>
+        .audio-player {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            color: white;
+        }
+        
+        .track-info {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .track-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .track-artist {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .custom-audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+        }
+        
+        .playlist {
+            margin-top: 30px;
+        }
+        
+        .playlist-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .playlist-item:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .audio-container {
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <h1>پخش کننده صوت</h1>
+    
+    <!-- پخش کننده ساده -->
+    <div class="audio-player">
+        <div class="track-info">
+            <div class="track-title">آهنگ نمونه</div>
+            <div class="track-artist">هنرمند ناشناس</div>
+        </div>
+        <audio controls class="custom-audio">
+            <source src="audio/horse.mp3" type="audio/mpeg">
+            <source src="audio/horse.ogv" type="audio/ogg">
+            مرورگر شما از تگ audio پشتیبانی نمی‌کند.
+        </audio>
+    </div>
+    
+    <!-- چند پخش کننده در کنار هم -->
+    <div style="text-align: center;">
+        <div class="audio-container">
+            <h3>آهنگ ۱</h3>
+            <audio controls>
+                <source src="audio/horse.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="audio-container">
+            <h3>آهنگ ۲</h3>
+            <audio controls>
+                <source src="audio/horse2.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="audio-container">
+            <h3>آهنگ ۳</h3>
+            <audio controls>
+                <source src="audio/horse3.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    
+    <!-- پخش کننده پیشرفته با پلی‌لیست -->
+    <div class="audio-player">
+        <div class="track-info">
+            <div class="track-title" id="currentTrack">لطفا آهنگی انتخاب کنید</div>
+            <div class="track-artist" id="currentArtist">-</div>
+        </div>
+        <audio id="mainAudio" controls class="custom-audio">
+            مرورگر شما از تگ audio پشتیبانی نمی‌کند.
+        </audio>
+        
+        <div class="playlist">
+            <h3>پلی‌لیست</h3>
+            <div class="playlist-item" onclick="playTrack('audio/horse.mp3', 'آهنگ زیبا', 'خواننده اول')">
+                🎵 آهنگ زیبا - خواننده اول
+            </div>
+            <div class="playlist-item" onclick="playTrack('audio/horse2.mp3', 'ملودی شب', 'خواننده دوم')">
+                🎵 ملودی شب - خواننده دوم
+            </div>
+            <div class="playlist-item" onclick="playTrack('audio/horse3.mp3', 'ریتم تابستان', 'خواننده سوم')">
+                🎵 ریتم تابستان - خواننده سوم
+            </div>
+        </div>
+    </div>
+    <script>
+        function playTrack(src, title, artist) {
+            const audio = document.getElementById('mainAudio');
+            const currentTrack = document.getElementById('currentTrack');         
+            const currentArtist = document.getElementById('currentArtist');
+            
+            audio.src = src;
+            currentTrack.textContent = title;
+            currentArtist.textContent = artist;
+            
+            audio.play().catch(e => {
+                console.log('پخش خودکار ممکن نیست:', e);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+@import url("Vazirmatn-font-face.css");
+@font-face {
+    font-family: 'Ravi';
+    src: url('fonts/Ravi.woff2') format('woff2'),
+         url('fonts/Ravi.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'IRANSans';
+    src: url('fonts/IRANSansDNFaNum.woff2') format('woff2'),
+         url('fonts/IRANSansDNFaNum.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IRANSans';
+    src: url('fonts/IRANSansWeb-Bold.woff2') format('woff2'),
+         url('fonts/IRANSansWeb-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+body {
+  font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif;
+}
+
+body.iransanse {
+  font-family: 'IRANSans', 'Tahoma', 'Arial', sans-serif;
+}
+
+
+

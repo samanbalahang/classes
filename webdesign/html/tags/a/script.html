@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- منوی ناوبری -->
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#about">درباره</a>
+        <a href="#services">خدمات</a>
+        <a href="#contact">تماس</a>
+    </nav>
+
+    <!-- بخش‌های صفحه -->
+    <section id="home">
+        <h2>خانه</h2>
+        <p>محتوای بخش خانه...</p>
+    </section>
+
+    <section id="about">
+        <h2>درباره ما</h2>
+        <p>محتوای بخش درباره ما...</p>
+    </section>
+
+    <section id="services">
+        <h2>خدمات</h2>
+        <p>محتوای بخش خدمات...</p>
+    </section>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

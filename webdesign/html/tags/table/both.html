@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <style>
+        .complex-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .complex-table th, .complex-table td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+        .complex-table th {
+            background: #2c3e50;
+            color: white;
+        }
+        .merged-cell {
+            background: #3498db;
+            color: whit e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table class="complex-table">
+        <tr>
+            <th rowspan="2">شهر</th>
+            <th colspan="2">جمعیت</th>
+            <th rowspan="2">مساحت (km²)</th>
+        </tr>
+        <tr>
+            <th>مرد</th>
+            <th>زن</th>
+        </tr>
+        <tr>
+            <td>تهران</td>
+            <td>۴,۵۰۰,۰۰۰</td>
+            <td>۴,۳۰۰,۰۰۰</td>
+            <td>۷۳۰</td>
+        </tr>
+        <tr>
+            <td>مشهد</td>
+            <td>۱,۸۰۰,۰۰۰</td>
+            <td>۱,۷۵۰,۰۰۰</td>
+            <td>۳۵۰</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="merged-cell">جمع کل</td>
+            <td>۱۲,۳۵۰,۰۰۰</td>
+        </tr>
+    </table>
+</body>
+</html>

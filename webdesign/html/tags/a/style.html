@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   /* حالت پیش‌فرض - inline */
+a {
+    display: inline;
+}
+
+/* تغییر به block */
+a.block-link {
+    display: block;
+    padding: 10px;
+    background: blue;
+    color: white;
+}
+
+/* تغییر به inline-block */
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+ <a href="#">
+    inline
+ </a>
+ <a class="block-link" href="#">
+    block-link
+ </a>
+ 
+ <a class="button" href="#">
+ button
+ </a>
+
+</body>
+</html>

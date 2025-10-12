@@ -1,0 +1,13 @@
+body {
+    font-family: var(--font-main);
+    color: #333;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}

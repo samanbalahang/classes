@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radial-gradient</title>
+        <style>
+.gradient-box {
+  width: 250px;
+  height: 200px;
+  margin: 15px;
+  border: 2px solid #333;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* گرادیان دایره‌ای ساده */
+.radial-simple {
+  background: radial-gradient(circle, #ff6b6b, #4ecdc4);
+}
+
+/* گرادیان بیضی شکل */
+.radial-ellipse {
+  background: radial-gradient(ellipse, #ff6b6b, #4ecdc4, #45b7d1);
+}
+
+/* گرادیان با موقعیت مشخص */
+.radial-position {
+  background: radial-gradient(circle at top left, #ff6b6b, #4ecdc4);
+}
+
+.radial-position-pixel {
+  background: radial-gradient(circle at 70% 30%, #ff6b6b, #4ecdc4);
+}
+
+/* گرادیان با اندازه مشخص */
+.radial-size {
+  background: radial-gradient(50px 50px at center, #ff6b6b, #4ecdc4);
+}
+
+/* گرادیان با چند رنگ */
+.radial-multi {
+  background: radial-gradient(circle, #ff6b6b, #ffd166, #06d6a0, #118ab2);
+}
+
+/* گرادیان با موقعیت رنگ‌ها */
+.radial-color-stops {
+  background: radial-gradient(circle, #ff6b6b 0%, #ffd166 30%, #06d6a0 70%, #118ab2 100%);
+}
+
+/* گرادیان با اندازه‌های مختلف */
+.radial-closest-side {
+  background: radial-gradient(closest-side circle at 30% 30%, #ff6b6b, #4ecdc4);
+}
+
+.radial-farthest-corner {
+  background: radial-gradient(farthest-corner circle at 30% 30%, #ff6b6b, #4ecdc4);
+}
+</style>
+</head>
+<body>
+
+
+<div class="gradient-box radial-simple">دایره‌ای ساده</div>
+<div class="gradient-box radial-ellipse">بیضی شکل</div>
+<div class="gradient-box radial-position">موقعیت: بالا چپ</div>
+<div class="gradient-box radial-position-pixel">موقعیت: 70% 30%</div>
+<div class="gradient-box radial-size">سایز: 50px 50px</div>
+<div class="gradient-box radial-multi">چند رنگ</div>
+<div class="gradient-box radial-color-stops">موقعیت رنگ‌ها</div>
+<div class="gradient-box radial-closest-side">closest-side</div>
+<div class="gradient-box radial-farthest-corner">farthest-corner</div>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            مثال عملی بکگراند
+        </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .demo-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .demo-box {
+            width: 300px;
+            height: 200px;
+            border: 3px solid #34495e;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        /* مثال‌های background-color */
+        .color-solid {
+            background-color: #e74c3c;
+        }
+        
+        .color-transparent {
+            background-color: rgba(231, 76, 60, 0.5);
+        }
+        
+        /* مثال‌های background-image */
+        .image-normal {
+            background-image: url('https://picsum.photos/300/200');
+            background-size: cover;
+        }
+        
+        .image-pattern {
+            background-image: url('https://dummyimage.com/200');
+        }
+        
+        /* مثال‌های background-repeat */
+        .repeat-normal {
+            background-image: url('https://picsum.photos/200/200');
+            background-repeat: repeat;
+        }
+        
+        .repeat-x {
+            background-image: url('https://picsum.photos/400/200');
+            background-repeat: repeat-x;
+            background-color: #3498db;
+        }
+        
+        .repeat-y {
+            background-image: url('https://picsum.photos/150/200');
+            background-repeat: repeat-y;
+            background-color: #2ecc71;
+        }
+        
+        .no-repeat {
+            background-image: url('https://picsum.photos/100/100');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #f1c40f;
+        }
+        
+        .info-panel {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .code-block {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            direction: ltr;
+            text-align: left;
+        }
+        .cul{
+            line-height: 2;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎨 آموزش خصوصیات Background در CSS</h1>
+        <p>Background-color | Background-image | Background-repeat</p>
+    </div>
+    
+    <div class="info-panel">
+        <h2>🔍 نمونه‌های عملی</h2>
+        <div class="demo-container">
+            <div class="demo-box color-solid">background-color: #e74c3c</div>
+            <div class="demo-box color-transparent">background-color: rgba(231, 76, 60, 0.5)</div>
+            <div class="demo-box image-normal">background-image: url('image.jpg')</div>
+            <div class="demo-box image-pattern">background-image: pattern</div>
+            <div class="demo-box repeat-normal">background-repeat: repeat</div>
+            <div class="demo-box repeat-x">background-repeat: repeat-x</div>
+            <div class="demo-box repeat-y">background-repeat: repeat-y</div>
+            <div class="demo-box no-repeat">background-repeat: no-repeat</div>
+        </div>
+    </div>
+    
+    <div class="info-panel">
+        <h2>📝 خلاصه و نکات کلیدی</h2>
+        
+        <h3>🎯 Background-color:</h3>
+        <div class="code-block">
+            .element {<br>
+            &nbsp;&nbsp;background-color: #3498db;<br>
+            &nbsp;&nbsp;background-color: rgba(52, 152, 219, 0.5);<br>
+            &nbsp;&nbsp;background-color: transparent;<br>
+            }
+        </div>
+        
+        <h3>🖼️ Background-image:</h3>
+        <div class="code-block">
+            .element {<br>
+            &nbsp;&nbsp;background-image: url('path/to/image.jpg');<br>
+            &nbsp;&nbsp;background-size: cover;<br>
+            &nbsp;&nbsp;background-position: center;<br>
+            }
+        </div>
+        
+        <h3>🔁 Background-repeat:</h3>
+        <div class="code-block">
+            .element {<br>
+            &nbsp;&nbsp;background-repeat: repeat;     /* تکرار کامل */<br>
+            &nbsp;&nbsp;background-repeat: repeat-x;   /* تکرار افقی */<br>
+            &nbsp;&nbsp;background-repeat: repeat-y;   /* تکرار عمودی */<br>
+            &nbsp;&nbsp;background-repeat: no-repeat;  /* بدون تکرار */<br>
+            }
+        </div>
+    </div>
+    
+    <div class="info-panel">
+        <h2>💡 نکات مهم برای دانشجویان</h2>
+        <ul class="cul">
+            <li>✅ <strong>Background-color</strong> همیشه در زیر Background-image نمایش داده می‌شود</li>
+            <li>✅ می‌توانید از چندین عکس به عنوان پس‌زمینه استفاده کنید</li>
+            <li>✅ مقدار پیش‌فرض <strong>background-repeat</strong> برابر با <strong>repeat</strong> است</li>
+            <li>✅ برای عکس‌های بزرگ از <strong>no-repeat</strong> استفاده کنید</li>
+            <li>✅ برای پترن‌های کوچک از <strong>repeat</strong> استفاده کنید</li>
+            <li>✅ از <strong>background-size: cover</strong> برای پوشش کامل زمینه استفاده کنید</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+<style>
+.gradient-box {
+  width: 250px;
+  height: 200px;
+  margin: 15px;
+  border: 2px solid #333;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* گرادیان دایره‌ای تکراری ساده */
+.repeating-radial-simple {
+  background: repeating-radial-gradient(
+    circle,
+    #ff6b6b,
+    #ff6b6b 10px,
+    #4ecdc4 10px,
+    #4ecdc4 20px
+  );
+}
+
+/* گرادیان دایره‌ای تکراری با فاصله بیشتر */
+.repeating-radial-spaced {
+  background: repeating-radial-gradient(
+    circle,
+    #ff6b6b,
+    #ff6b6b 20px,
+    #4ecdc4 20px,
+    #4ecdc4 40px
+  );
+}
+
+/* گرادیان دایره‌ای تکراری با چند رنگ */
+.repeating-radial-multi {
+  background: repeating-radial-gradient(
+    circle,
+    #ff6b6b,
+    #ff6b6b 10px,
+    #ffd166 10px,
+    #ffd166 20px,
+    #06d6a0 20px,
+    #06d6a0 30px,
+    #118ab2 30px,
+    #118ab2 40px
+  );
+}
+
+/* گرادیان دایره‌ای تکراری با موقعیت */
+.repeating-radial-position {
+  background: repeating-radial-gradient(
+    circle at 30% 20%,
+    #ff6b6b,
+    #ff6b6b 10px,
+    #4ecdc4 10px,
+    #4ecdc4 20px
+  );
+}
+
+/* گرادیان بیضی تکراری */
+.repeating-radial-ellipse {
+  background: repeating-radial-gradient(
+    ellipse,
+    #ff6b6b,
+    #ff6b6b 10px,
+    #4ecdc4 10px,
+    #4ecdc4 20px,
+    #45b7d1 20px,
+    #45b7d1 30px
+  );
+}
+
+/* الگوی دایره‌ای ظریف */
+.repeating-radial-subtle {
+  background: repeating-radial-gradient(
+    circle at center,
+    rgba(255, 107, 107, 0.3),
+    rgba(255, 107, 107, 0.3) 8px,
+    rgba(78, 205, 196, 0.3) 8px,
+    rgba(78, 205, 196, 0.3) 16px
+  );
+}
+</style>
+    <title>Repeating-radial-gradient</title>
+</head>
+<body>
+
+
+<div class="gradient-box repeating-radial-simple">دایره‌ای تکراری ساده</div>
+<div class="gradient-box repeating-radial-spaced">دایره‌ای با فاصله</div>
+<div class="gradient-box repeating-radial-multi">دایره‌ای چند رنگ</div>
+<div class="gradient-box repeating-radial-position">دایره‌ای با موقعیت</div>
+<div class="gradient-box repeating-radial-ellipse">بیضی تکراری</div>
+<div class="gradient-box repeating-radial-subtle">دایره‌ای ظریف</div>
+
+</body>
+</html>

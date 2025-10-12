@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeating-linear-gradient</title>
+    <style>
+.gradient-box {
+  width: 250px;
+  height: 200px;
+  margin: 15px;
+  border: 2px solid #333;
+  display: inline-block;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* گرادیان خطی تکراری ساده */
+.repeating-linear-simple {
+  background: repeating-linear-gradient(45deg, #ff6b6b, #ff6b6b 10px, #4ecdc4 10px, #4ecdc4 20px);
+}
+
+/* گرادیان خطی تکراری افقی */
+.repeating-linear-horizontal {
+  background: repeating-linear-gradient(to right, #ff6b6b, #ff6b6b 15px, #4ecdc4 15px, #4ecdc4 30px);
+}
+
+/* گرادیان خطی تکراری عمودی */
+.repeating-linear-vertical {
+  background: repeating-linear-gradient(to bottom, #ff6b6b, #ff6b6b 10px, #4ecdc4 10px, #4ecdc4 20px);
+}
+
+/* گرادیان خطی تکراری با چند رنگ */
+.repeating-linear-multi {
+  background: repeating-linear-gradient(
+    to right,
+    #ff6b6b,
+    #ff6b6b 10px,
+    #ffd166 10px,
+    #ffd166 20px,
+    #06d6a0 20px,
+    #06d6a0 30px,
+    #118ab2 30px,
+    #118ab2 40px
+  );
+}
+
+/* گرادیان خطی تکراری نرم */
+.repeating-linear-soft {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 107, 107, 0.1),
+    rgba(255, 107, 107, 0.1) 10px,
+    rgba(78, 205, 196, 0.1) 10px,
+    rgba(78, 205, 196, 0.1) 20px
+  );
+}
+
+/* الگوی راه‌راه */
+.repeating-linear-stripes {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 5px,
+    #f8f9fa 5px,
+    #f8f9fa 10px
+  );
+}
+</style>
+</head>
+<body>
+
+
+<div class="gradient-box repeating-linear-simple">مورب تکراری</div>
+<div class="gradient-box repeating-linear-horizontal">افقی تکراری</div>
+<div class="gradient-box repeating-linear-vertical">عمودی تکراری</div>
+<div class="gradient-box repeating-linear-multi">چند رنگ تکراری</div>
+<div class="gradient-box repeating-linear-soft">تکراری نرم</div>
+<div class="gradient-box repeating-linear-stripes">الگوی راه‌راه</div>
+
+</body>
+</html>

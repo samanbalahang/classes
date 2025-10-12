@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container {
+        width: 400px;
+        height: 300px;
+        border: 2px solid #333;
+        margin: 20px;
+    }
+    
+    .nature-bg {
+        background-image: url('https://picsum.photos/200/300');
+    }
+    
+    .pattern-bg {
+        background-image: url('https://picsum.photos/200/400');
+    }
+    
+    /* چندین عکس پس‌زمینه */
+    .multiple-bg {
+        background: 
+            url('https://picsum.photos/300') no-repeat /* لایه اول: عکس بدون تکرار */,
+            linear-gradient(45deg, #3498db, #2ecc71);
+    }
+</style>
+
+</head>
+<body>
+    <div class="container nature-bg">پس‌زمینه عکس طبیعت</div>
+<div class="container pattern-bg">پس‌زمینه پترن</div>
+<div class="container multiple-bg">چندین پس‌زمینه</div>
+
+</body>
+</html>

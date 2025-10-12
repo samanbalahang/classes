@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش background-attachment</title>
+    <style>
+        body {
+            height: 200vh;
+        }
+        
+        .section {
+            height: 100vh;
+            background-image: url('../../images/a.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+        }
+        
+        .scroll {
+            background-attachment: scroll;
+        }
+        
+        .fixed {
+            background-attachment: fixed;
+        }
+        
+        .local {
+            background-attachment: local;
+            height: 150vh;
+            overflow: auto;
+        }
+        .child{
+            height: 200vh
+        }
+    </style>
+</head>
+<body>
+    <div class="section scroll">background-attachment: scroll</div>
+    <div class="section fixed">background-attachment: fixed</div>
+    <div class="section local">
+        <div class="child">background-attachment: local</div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش background-position</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid #333;
+            background-image: url('../../images/b.jpg');
+            background-repeat: no-repeat;
+            margin: 20px;
+        }
+        
+        .center {
+            background-position: center;
+        }
+        
+        .top-right {
+            background-position: top right;
+        }
+        
+        .custom {
+            background-position: 70% 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box center">موقعیت: مرکز</div>
+    <div class="box top-right">موقعیت: بالا راست</div>
+    <div class="box custom">موقعیت: 70% 25%</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear-gradient</title>
+        <style>
+.gradient-box {
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  border: 2px solid #333;
+  display: inline-block;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* گرادیان‌های خطی پایه */
+.linear-simple {
+  background: linear-gradient(#ff6b6b, #4ecdc4);
+}
+
+.linear-direction-right {
+  background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+}
+
+.linear-diagonal {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+
+.linear-angle {
+  background: linear-gradient(120deg, #ff6b6b, #4ecdc4);
+}
+
+/* گرادیان با چند رنگ */
+.linear-multi {
+  background: linear-gradient(to right, #ff6b6b, #ffd166, #06d6a0, #118ab2);
+}
+
+/* گرادیان با موقعیت مشخص رنگ‌ها */
+.linear-position {
+  background: linear-gradient(to right, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+}
+
+.linear-sharp {
+  background: linear-gradient(to right, #ff6b6b 0%, #ff6b6b 50%, #4ecdc4 50%, #4ecdc4 100%);
+}
+
+/* گرادیان با شفافیت */
+.linear-transparent {
+  background: linear-gradient(to bottom, rgba(255,107,107,0.8), rgba(78,205,196,0.3));
+}
+
+/* گرادیان‌های دایره‌ای */
+.radial-simple {
+  background: radial-gradient(circle, #ff6b6b, #4ecdc4);
+}
+
+.radial-ellipse {
+  background: radial-gradient(ellipse, #ff6b6b, #4ecdc4, #45b7d1);
+}
+
+.radial-position {
+  background: radial-gradient(circle at top left, #ff6b6b, #4ecdc4);
+}
+
+.radial-size {
+  background: radial-gradient(50px 50px at center, #ff6b6b, #4ecdc4);
+}
+</style>
+</head>
+<body>
+
+
+<div class="gradient-box linear-simple">گرادیان عمودی ساده</div>
+<div class="gradient-box linear-direction-right">گرادیان افقی (راست)</div>
+<div class="gradient-box linear-diagonal">گرادیان 45 درجه</div>
+<div class="gradient-box linear-angle">گرادیان 120 درجه</div>
+<div class="gradient-box linear-multi">گرادیان چندرنگی</div>
+<div class="gradient-box linear-position">گرادیان با موقعیت رنگ</div>
+<div class="gradient-box linear-sharp">گرادیان با مرز مشخص</div>
+<div class="gradient-box linear-transparent">گرادیان شفاف</div>
+<div class="gradient-box radial-simple">گرادیان دایره‌ای ساده</div>
+<div class="gradient-box radial-ellipse">گرادیان بیضی شکل</div>
+<div class="gradient-box radial-position">گرادیان دایره‌ای در گوشه</div>
+<div class="gradient-box radial-size">گرادیان دایره‌ای با سایز مشخص</div>
+
+</body>
+</html>

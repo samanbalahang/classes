@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+        <style>
+.box {
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  border: 2px solid #333;
+  padding: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+/* پس‌زمینه کامل با تمام ویژگی‌ها */
+.background-full {
+  background: 
+    url('https://via.placeholder.com/100x100/ff6b6b/ffffff?text=BG1') 
+    no-repeat 
+    center 
+    fixed 
+    #f8f9fa;
+}
+
+/* چندین لایه پس‌زمینه */
+.background-multiple {
+  background: 
+    url('https://via.placeholder.com/100x100/4ecdc4/ffffff?text=IMG1') top left no-repeat,
+    url('https://via.placeholder.com/100x100/45b7d1/ffffff?text=IMG2') bottom right no-repeat,
+    linear-gradient(45deg, #ff9a9e, #fad0c4);
+}
+
+/* فقط رنگ پس‌زمینه */
+.background-color-only {
+  background: #e9ecef;
+}
+
+/* تصویر با موقعیت و رنگ مشخص */
+.background-image-position {
+  background: 
+    url('https://via.placeholder.com/150x100/ff6b6b/ffffff') 
+    right bottom 
+    no-repeat 
+    #dee2e6;
+}
+</style>
+</head>
+<body>
+
+
+<div class="box background-full">پس‌زمینه کامل: تصویر + موقعیت + تکرار + ثابت + رنگ</div>
+<div class="box background-multiple">چندین لایه پس‌زمینه (تصاویر و گرادیان)</div>
+<div class="box background-color-only">فقط رنگ پس‌زمینه</div>
+<div class="box background-image-position">تصویر در گوشه پایین راست با رنگ زمینه</div>
+
+</body>
+</html>

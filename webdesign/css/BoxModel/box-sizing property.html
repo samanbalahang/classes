@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* حالت پیش فرض */
+        .default-box {
+            box-sizing: content-box; /* فقط content در width/height محاسبه می‌شود */
+            width: 200px;
+            padding: 20px; /* عرض کل: 200 + 40 = 240px */
+        }
+
+        .border-box {
+            box-sizing: border-box; /* padding و border در width/height محاسبه می‌شوند */
+            width: 200px;
+            padding: 20px; /* عرض کل: 200px */
+        }
+    </style>
+</head>
+<body>
+   <div class="default-box">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis, consectetur eius neque cum recusandae similique explicabo nobis, id dolores a aliquam facere molestiae illo aut reprehenderit nemo temporibus iste soluta
+        </p>
+   </div>
+   <div class="border-box">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis, consectetur eius neque cum recusandae similique explicabo nobis, id dolores a aliquam facere molestiae illo aut reprehenderit nemo temporibus iste soluta.
+
+        </p>
+   </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --font-size-large: 24px;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+        }
+
+        .box1 {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-unit);
+            border-radius: var(--border-radius);
+        }
+
+        .box2 {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: calc(var(--spacing-unit) * 2);
+            font-size: var(--font-size-large);
+        }
+
+        .box3 {
+            border: 2px solid var(--primary-color);
+            padding: var(--spacing-unit);
+            border-radius: var(--border-radius);
+        }
+    </style>
+    <title>root</title>
+</head>
+
+<body>
+
+
+    <div class="box1">این با متغیرهای :root استایل شده</div>
+    <div class="box2">این هم با متغیرهای :root استایل شده</div>
+    <div class="box3">این با border و متغیرهای :root استایل شده</div>
+
+</body>
+
+</html>

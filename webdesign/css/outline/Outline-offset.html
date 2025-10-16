@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outline-offset</title>
+        <style>
+            .offset-example {
+                background-color: #f8f9fa;
+                padding: 20px;
+                margin-bottom: 20px;
+                border: 2px solid #dee2e6;
+                outline: 3px solid #007bff;
+            }
+
+            .positive { outline-offset: 10px; }
+            .negative { outline-offset: -5px; }
+            .mixed { outline-offset: 15px; }
+            .zero { outline-offset: 0; }
+            .em-unit { outline-offset: 1em; }
+        </style>
+</head>
+<body>
+
+
+<div class="offset-example positive">outline-offset: 10px (مثبت)</div>
+<div class="offset-example negative">outline-offset: -5px (منفی)</div>
+<div class="offset-example mixed">outline-offset: 15px (فاصله زیاد)</div>
+<div class="offset-example zero">outline-offset: 0 (بدون فاصله)</div>
+<div class="offset-example em-unit">outline-offset: 1em (واحد نسبی)</div>
+
+</body>
+</html>

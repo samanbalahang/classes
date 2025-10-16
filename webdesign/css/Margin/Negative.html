@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negative</title>
+        <style>
+            .container {
+                background-color: #f0f0f0;
+                padding: 20px;
+            }
+
+            .normal-box {
+                background-color: #ffcccc;
+                padding: 20px;
+                margin-bottom: 10px;
+            }
+
+            .negative-top {
+                background-color: #ccffcc;
+                padding: 20px;
+                margin-top: -30px;
+            }
+
+            .negative-left {
+                background-color: #ccccff;
+                padding: 20px;
+                margin-left: -50px;
+            }
+
+            .overlap-container {
+                position: relative;
+                height: 120px;
+                background-color: #e0e0e0;
+                padding: 10px;
+            }
+
+            .box1 {
+                background-color: rgba(255, 0, 0, 0.7);
+                padding: 20px;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                z-index: 1;
+            }
+
+            .box2 {
+                background-color: rgba(0, 255, 0, 0.7);
+                padding: 20px;
+                position: absolute;
+                top: 40px;
+                left: 40px;
+                margin-left: -30px;
+                z-index: 2;
+            }
+        </style>
+    </head>
+<body>
+
+<div class="container">
+    <div class="normal-box">متن معمولی با margin مثبت</div>
+    <div class="negative-top">این المان با margin-top منفی به بالا کشیده شده است</div>
+</div>
+
+<div class="container">
+    <div class="negative-left">این المان با margin-left منفی به چپ کشیده شده است</div>
+</div>
+
+<div class="overlap-container">
+    <div class="box1">المان اول</div>
+    <div class="box2">المان دوم با margin منفی برای همپوشانی</div>
+</div>
+
+</body>
+</html>

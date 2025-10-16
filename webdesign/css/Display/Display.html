@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        .container {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+        }
+
+        .block-example {
+            display: block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            width: 200px;
+            height: 50px;
+        }
+
+        .inline-example {
+            display: inline;
+            background-color: #4ecdc4;
+            color: white;
+            padding: 10px;
+            margin: 0 5px;
+            /* width و height کار نمی‌کنند */
+        }
+
+        .inline-block-example {
+            display: inline-block;
+            background-color: #45b7d1;
+            color: white;
+            padding: 10px;
+            margin: 0 5px;
+            width: 120px;
+            height: 40px;
+        }
+
+        .hidden-example {
+            display: none;
+            background-color: #96ceb4;
+            padding: 10px;
+        }
+
+        .visible-after-hidden {
+            background-color: #feca57;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="block-example">display: block - المان اول</div>
+        <div class="block-example">display: block - المان دوم</div>
+    </div>
+
+    <div class="container">
+        <span class="inline-example">display: inline - اول</span>
+        <span class="inline-example">display: inline - دوم</span>
+        <span class="inline-example">display: inline - سوم</span>
+    </div>
+
+    <div class="container">
+        <div class="inline-block-example">inline-block اول</div>
+        <div class="inline-block-example">inline-block دوم</div>
+        <div class="inline-block-example">inline-block سوم</div>
+    </div>
+
+    <div class="container">
+        <div class="hidden-example">این المان display: none دارد</div>
+        <div class="visible-after-hidden">این المان بعد از المان مخفی است</div>
+    </div>
+</body>
+
+</html>

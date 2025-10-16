@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inaction</title>
+        <style>
+.text-container {
+    width: 300px;
+    height: 150px;
+    border: 2px solid #333;
+    padding: 10px;
+    margin: 10px;
+}
+
+.scrollable {
+    overflow: auto;
+}
+
+.hidden-content {
+    overflow: hidden;
+}
+
+.long-text {
+    width: 400px; /* عمدا بزرگتر از container */
+}
+</style>
+</head>
+<body>
+
+
+<div class="text-container scrollable">
+    <div class="long-text">
+        این یک متن بسیار طولانی است که از container خارج می‌شود...
+    </div>
+</div>
+
+<div class="text-container hidden-content">
+    <div class="long-text">
+        این متن به دلیل hidden بودن، قسمت اضافی آن دیده نمی‌شود.
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        .table-container {
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border: 2px solid #333;
+        }
+
+        th, td {
+            border: 1px solid #666;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* جدا بودن حاشیه‌ها با فاصله */
+        .separate-table {
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+
+        /* چسبیدن حاشیه‌ها */
+        .collapse-table {
+            border-collapse: collapse;
+        }
+
+        /* فاصله‌های مختلف */
+        .spacing-table {
+            border-collapse: separate;
+            border-spacing: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    
+
+<div class="table-container">
+    <h3>border-collapse: separate - border-spacing: 10px</h3>
+    <table class="separate-table">
+        <tr>
+            <th>ستون ۱</th>
+            <th>ستون ۲</th>
+            <th>ستون ۳</th>
+        </tr>
+        <tr>
+            <td>داده ۱</td>
+            <td>داده ۲</td>
+            <td>داده ۳</td>
+        </tr>
+    </table>
+</div>
+
+<div class="table-container">
+    <h3>border-collapse: collapse</h3>
+    <table class="collapse-table">
+        <tr>
+            <th>ستون ۱</th>
+            <th>ستون ۲</th>
+            <th>ستون ۳</th>
+        </tr>
+        <tr>
+            <td>داده ۱</td>
+            <td>داده ۲</td>
+            <td>داده ۳</td>
+        </tr>
+    </table>
+</div>
+
+<div class="table-container">
+    <h3>border-spacing: 5px 15px (افقی عمودی)</h3>
+    <table class="spacing-table">
+        <tr>
+            <th>ستون ۱</th>
+            <th>ستون ۲</th>
+            <th>ستون ۳</th>
+        </tr>
+        <tr>
+            <td>داده ۱</td>
+            <td>داده ۲</td>
+            <td>داده ۳</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

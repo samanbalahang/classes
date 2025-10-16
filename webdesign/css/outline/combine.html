@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>combine</title>
+        <style>
+.combined-example {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #dee2e6;
+}
+
+.focus-example {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.focus-example:focus {
+    outline: 3px solid #28a745;
+}
+
+.button-example {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.button-example:focus {
+    outline: 2px dashed #ffc107;
+}
+
+.custom-outline {
+    outline: 4px dotted #6f42c1;
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+
+<div class="focus-example" tabindex="0">
+    روی این المان کلیک کنید یا با دکمه Tab آن را انتخاب کنید
+</div>
+
+<button class="button-example" tabindex="0">
+    دکمه با outline سفارشی
+</button>
+
+<div class="custom-outline">
+    outline سفارشی: 4px dotted #6f42c1
+</div>
+</body>
+</html>

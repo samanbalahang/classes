@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsing </title>
+    <style>
+        .parent {
+            background-color: #e0e0e0;
+            padding: 10px;
+        }
+
+        .child1 {
+            background-color: #ffcccc;
+            margin-bottom: 40px;
+            padding: 15px;
+        }
+
+        .child2 {
+            background-color: #ccffcc;
+            margin-top: 30px;
+            padding: 15px;
+        }
+
+        .no-collapse {
+            background-color: #ccccff;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 1px;
+            /* جلوگیری از collapsing */
+        }
+        .no-collapse .child{
+            margin: 10px;
+            height: 50px;
+            width: 50px;
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="parent" >
+        <div class="child1">Child 1 - margin-bottom: 40px</div>
+        <div class="child2">Child 2 - margin-top: 30px</div>
+        <p dir="rtl">فاصله عمودی بین دو المان: 40px (نه 70px)</p>
+    </div>
+
+    <div class="no-collapse" dir="rtl">
+        این المان با padding از collapsing جلوگیری می‌کند
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+</body>
+
+</html>

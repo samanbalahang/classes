@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منوهای متحرک</title>
+    <style>
+        body {
+            background-color: #efefef;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .menu-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .menu-section h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .menu {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            transition-duration: 0.5s;
+        }
+
+        /* استایل‌های مشترک برای آیکون‌ها */
+        .menu .icon,
+        .menu .icon-left,
+        .menu .icon-right,
+        .menu .icon-E,
+        .menu .icon-X {
+            transition-duration: 0.5s;
+            position: absolute;
+            height: 8px;
+            background-color: #212121;
+        }
+
+        .menu .icon::before,
+        .menu .icon::after,
+        .menu .icon-left::before,
+        .menu .icon-left::after,
+        .menu .icon-right::before,
+        .menu .icon-right::after,
+        .menu .icon-E::before,
+        .menu .icon-E::after,
+        .menu .icon-X::before,
+        .menu .icon-X::after {
+            transition-duration: 0.5s;
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background-color: #212121;
+            content: "";
+        }
+
+        /* استایل‌های خاص برای هر منو */
+        /* منوی 1 */
+        .btn1 .icon-left {
+            width: 30px;
+            top: 30px;
+            left: 0px;
+        }
+
+        .btn1 .icon-left::before {
+            top: -20px;
+        }
+
+        .btn1 .icon-left::after {
+            top: 20px;
+        }
+
+        .btn1 .icon-right {
+            width: 30px;
+            top: 30px;
+            left: 30px;
+        }
+
+        .btn1 .icon-right::before {
+            top: -20px;
+        }
+
+        .btn1 .icon-right::after {
+            top: 20px;
+        }
+
+        .btn1.open .icon-left {
+            background: transparent;
+        }
+
+        .btn1.open .icon-left::before {
+            transform: rotateZ(45deg) scaleX(1.4) translate(4px, 4px);
+        }
+
+        .btn1.open .icon-left::after {
+            transform: rotateZ(-45deg) scaleX(1.4) translate(4px, -4px);
+        }
+
+        .btn1.open .icon-right {
+            background: transparent;
+        }
+
+        .btn1.open .icon-right::before {
+            transform: rotateZ(-45deg) scaleX(1.4) translate(-4px, 4px);
+        }
+
+        .btn1.open .icon-right::after {
+            transform: rotateZ(45deg) scaleX(1.4) translate(-4px, -4px);
+        }
+
+        /* منوی 2 */
+        .btn2 .icon {
+            width: 60px;
+            top: 30px;
+        }
+
+        .btn2 .icon::before {
+            top: -20px;
+        }
+
+        .btn2 .icon::after {
+            top: 20px;
+        }
+
+        .btn2.open .icon {
+            background: transparent;
+        }
+
+        .btn2.open .icon::before {
+            transform: rotateZ(45deg) scaleX(1.25) translate(13px, 13px);
+        }
+
+        .btn2.open .icon::after {
+            transform: rotateZ(-45deg) scaleX(1.25) translate(12px, -12px);
+        }
+
+        /* منوی 3 */
+        .btn3 .icon {
+            width: 60px;
+            top: 30px;
+        }
+
+        .btn3 .icon::before {
+            top: -20px;
+        }
+
+        .btn3 .icon::after {
+            top: 20px;
+        }
+
+        .btn3.open .icon::before {
+            transform: rotateZ(135deg) scaleX(1.25) translate(13px, -13px);
+        }
+
+        .btn3.open .icon::after {
+            transform: rotateZ(-135deg) scaleX(1.25) translate(12px, 12px);
+        }
+
+        /* منوی 4 */
+        .btn4 .icon {
+            width: 60px;
+            top: 30px;
+            height: 0px;
+        }
+
+        .btn4 .icon::before {
+            top: -20px;
+        }
+
+        .btn4 .icon::after {
+            top: 20px;
+        }
+
+        .btn4.open .icon::before {
+            transform: rotateZ(45deg) scaleX(1.25) translate(12px, 12px);
+        }
+
+        .btn4.open .icon::after {
+            transform: rotateZ(-45deg) scaleX(1.25) translate(12px, -12px);
+        }
+
+        /* منوی 5 */
+        .btn5 .icon {
+            width: 60px;
+            top: 30px;
+        }
+
+        .btn5 .icon::before {
+            top: -21px;
+        }
+
+        .btn5 .icon::after {
+            top: 20px;
+        }
+
+        .btn5.open .icon::before {
+            transform: rotateZ(-45deg) scaleX(0.75) translate(-20px, -6px);
+        }
+
+        .btn5.open .icon::after {
+            transform: rotateZ(45deg) scaleX(0.75) translate(-20px, 6px);
+        }
+
+        /* منوی 6 */
+        .btn6 .icon {
+            width: 60px;
+            top: 30px;
+        }
+
+        .btn6 .icon::before {
+            top: -20px;
+        }
+
+        .btn6 .icon::after {
+            top: 20px;
+        }
+
+        .btn6.open .icon {
+            transform: rotateZ(180deg);
+        }
+
+        .btn6.open .icon::before {
+            transform: rotateZ(45deg) scaleX(0.75) translate(20px, -6px);
+        }
+
+        .btn6.open .icon::after {
+            transform: rotateZ(-45deg) scaleX(0.75) translate(20px, 6px);
+        }
+
+        /* منوی 7 */
+        .btn7 .icon-E {
+            width: 60px;
+            top: 30px;
+            transition-delay: 0.5s;
+        }
+
+        .btn7 .icon-E::before {
+            top: -20px;
+        }
+
+        .btn7 .icon-E::after {
+            top: 20px;
+        }
+
+        .btn7 .icon-X {
+            width: 200px;
+            top: 30px;
+            height: 0px;
+            transform: scaleX(0);
+            transform-origin: 30px 0px;
+        }
+
+        .btn7 .icon-X::before {
+            top: -20px;
+            transform: rotateZ(45deg) scaleX(1.25) translate(12px, 12px);
+        }
+
+        .btn7 .icon-X::after {
+            top: 20px;
+            transform: rotateZ(-45deg) scaleX(1.25) translate(12px, -12px);
+        }
+
+        .btn7.open .icon-E {
+            transform: scaleX(0);
+            transition-delay: 0s;
+        }
+
+        .btn7.open .icon-X {
+            transform: scaleX(1);
+            transition-delay: 0.5s;
+        }
+
+        /* منوی 8 */
+        .btn8 .icon-E {
+            width: 60px;
+            top: 30px;
+            transform-origin: 0px 0px;
+            transition-delay: 0.5s;
+        }
+
+        .btn8 .icon-E::before {
+            top: -20px;
+        }
+
+        .btn8 .icon-E::after {
+            top: 20px;
+        }
+
+        .btn8 .icon-X {
+            width: 60px;
+            top: 30px;
+            height: 0px;
+            transform-origin: 0px 0px;
+            transform: scaleY(0);
+        }
+
+        .btn8 .icon-X::before {
+            top: -20px;
+            transform: rotateZ(45deg) scaleX(1.25) translate(12px, 12px);
+        }
+
+        .btn8 .icon-X::after {
+            top: 20px;
+            transform: rotateZ(-45deg) scaleX(1.25) translate(12px, -12px);
+        }
+
+        .btn8.open .icon-E {
+            transform: scaleY(0);
+            transition-delay: 0s;
+        }
+
+        .btn8.open .icon-X {
+            transform: scaleY(1);
+            transition-delay: 0.5s;
+        }
+
+        /* منوی 9 */
+        .btn9 .icon {
+            width: 60px;
+            top: 0;
+            height: 0px;
+            transform: rotateZ(90deg);
+            transform-origin: 30px 30px;
+            left: -15px;
+        }
+
+        .btn9 .icon::before {
+            width: 30px;
+            height: 60px;
+            top: 0;
+        }
+
+        .btn9 .icon::after {
+            width: 30px;
+            height: 60px;
+            top: 0;
+            left: 30px;
+        }
+
+        .btn9.open .icon {
+            transform: rotateZ(0deg);
+        }
+
+        .btn9.open .icon::before {
+            width: 22.5px;
+        }
+
+        .btn9.open .icon::after {
+            transform-origin: 30px 60px;
+            transform: scaleX(0.75);
+        }
+
+        .btn9.play .icon {
+            transform: rotateZ(0deg);
+        }
+
+        .btn9.play .icon::before {
+            width: 500px;
+        }
+
+        .btn9.play .icon::after {
+            transform-origin: 30px 60px;
+            transform: scaleX(2);
+        }
+
+        /* منوی 10 */
+        .btn10 .icon {
+            width: 60px;
+            top: 30px;
+        }
+
+        .btn10 .icon::before {
+            top: -20px;
+        }
+
+        .btn10 .icon::after {
+            top: 20px;
+        }
+
+        .btn10.open .icon {
+            transform: rotateZ(-180deg);
+        }
+
+        .btn10.open .icon::before {
+            transform: rotateZ(-45deg) scaleX(0.75) translate(-20px, -6px);
+        }
+
+        .btn10.open .icon::after {
+            transform: rotateZ(45deg) scaleX(0.75) translate(-20px, 6px);
+        }
+
+        /* منوی 11 */
+        .btn11 .icon-left {
+            width: 15px;
+            height: 4px;
+            top: 30px;
+        }
+
+        .btn11 .icon-left::before {
+            width: 15px;
+            height: 4px;
+            top: -10px;
+        }
+
+        .btn11 .icon-left::after {
+            width: 15px;
+            height: 4px;
+            top: 10px;
+        }
+
+        .btn11 .icon-right {
+            width: 15px;
+            height: 4px;
+            top: 30px;
+            left: 15px;
+        }
+
+        .btn11 .icon-right::before {
+            width: 15px;
+            height: 4px;
+            top: -10px;
+        }
+
+        .btn11 .icon-right::after {
+            width: 15px;
+            height: 4px;
+            top: 10px;
+        }
+
+        .btn11.open .icon-left {
+            background: transparent;
+        }
+
+        .btn11.open .icon-left::before {
+            transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
+        }
+
+        .btn11.open .icon-left::after {
+            transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
+        }
+
+        .btn11.open .icon-right {
+            background: transparent;
+        }
+
+        .btn11.open .icon-right::before {
+            transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
+        }
+
+        .btn11.open .icon-right::after {
+            transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
+        }
+
+        /* منوی 12 */
+        .btn12 .icon {
+            width: 30px;
+            height: 4px;
+            top: 30px;
+        }
+
+        .btn12 .icon::before {
+            width: 30px;
+            height: 4px;
+            top: -10px;
+        }
+
+        .btn12 .icon::after {
+            width: 30px;
+            height: 4px;
+            top: 10px;
+        }
+
+        .btn12.open .icon {
+            background: transparent;
+        }
+
+        .btn12.open .icon::before {
+            transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+        }
+
+        .btn12.open .icon::after {
+            transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+        }
+
+        /* منوی 13 */
+        .btn13 .icon {
+            width: 30px;
+            height: 4px;
+            top: 30px;
+        }
+
+        .btn13 .icon::before {
+            width: 30px;
+            height: 4px;
+            top: -10px;
+        }
+
+        .btn13 .icon::after {
+            width: 30px;
+            height: 4px;
+            top: 10px;
+        }
+
+        .btn13.open .icon::before {
+            transform: rotateZ(-45deg) scaleX(0.75) translate(-10px, -3px);
+        }
+
+        .btn13.open .icon::after {
+            transform: rotateZ(45deg) scaleX(0.75) translate(-10px, 3px);
+        }
+
+        /* منوی 14 */
+        .btn14 .icon-circle {
+            position: absolute;
+            height: 60px;
+            width: 60px;
+            top: 2px;
+            border-radius: 100%;
+            background: transparent;
+            border: 4px solid black;
+            left: -15px;
+            transition-duration: 0.5s;
+        }
+
+        .btn14 .icon-circle:hover {
+            background: #fff;
+        }
+
+        .btn14 .icon {
+            width: 30px;
+            height: 4px;
+            top: 30px;
+            border-radius: 4px;
+        }
+
+        .btn14 .icon::before {
+            width: 30px;
+            height: 4px;
+            top: -10px;
+            border-radius: 4px;
+        }
+
+        .btn14 .icon::after {
+            width: 30px;
+            height: 4px;
+            top: 10px;
+            border-radius: 4px;
+        }
+
+        .btn14.open .icon-circle {
+            background: #fff;
+        }
+
+        .btn14.open .icon {
+            background: transparent;
+        }
+
+        .btn14.open .icon::before {
+            transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+        }
+
+        .btn14.open .icon::after {
+            transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+        }
+
+        /* منوی 15 */
+        .btn15 .icon {
+            width: 30px;
+            height: 4px;
+            top: 30px;
+            left: 15px;
+            border-radius: 4px;
+        }
+
+        .btn15 .icon::before {
+            width: 30px;
+            height: 4px;
+            top: -10px;
+            border-radius: 4px;
+        }
+
+        .btn15 .icon::after {
+            width: 30px;
+            height: 4px;
+            top: 10px;
+            border-radius: 4px;
+        }
+
+        .btn15:hover {
+            background: #fff;
+        }
+
+        .btn15.open .icon {
+            background: transparent;
+        }
+
+        .btn15.open .icon::before {
+            transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+        }
+
+        .btn15.open .icon::after {
+            transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+        }
+
+        /* منوهای جدید */
+        .all-btn {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .menu-btn-1, .menu-btn-2, .menu-btn-3, .menu-btn-4, 
+        .menu-btn-5, .menu-btn-6, .menu-btn-7, .menu-btn-8 {
+            height: 32px;
+            width: 40px;
+            cursor: pointer;
+        }
+
+        .menu-btn-1 span, .menu-btn-1 span::before, .menu-btn-1 span::after,
+        .menu-btn-2 span, .menu-btn-2 span::before, .menu-btn-2 span::after,
+        .menu-btn-3 span, .menu-btn-3 span::before, .menu-btn-3 span::after,
+        .menu-btn-4 span, .menu-btn-4 span::before, .menu-btn-4 span::after,
+        .menu-btn-6 span, .menu-btn-6 span::before, .menu-btn-6 span::after {
+            background: #212121;
+            border-radius: 3px;
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 6px;
+            margin-top: 13px;
+            transition: .3s ease-in-out;
+        }
+
+        .menu-btn-1 span::before, .menu-btn-2 span::before, .menu-btn-3 span::before,
+        .menu-btn-4 span::before, .menu-btn-6 span::before {
+            margin-top: -12px;
+        }
+
+        .menu-btn-1 span::after, .menu-btn-2 span::after, .menu-btn-3 span::after,
+        .menu-btn-4 span::after, .menu-btn-6 span::after {
+            margin-top: 12px;
+        }
+
+        .menu-btn-1.active span, .menu-btn-2.active span, .menu-btn-3.active span {
+            background: transparent;
+        }
+
+        .menu-btn-1.active span::before, .menu-btn-2.active span::before, 
+        .menu-btn-3.active span::before, .menu-btn-6.active span::before {
+            margin-top: 0;
+            transform: rotate(45deg);
+        }
+
+        .menu-btn-1.active span::after, .menu-btn-2.active span::after, 
+        .menu-btn-3.active span::after, .menu-btn-6.active span::after {
+            margin-top: 0;
+            transform: rotate(-45deg);
+        }
+
+        .menu-btn-2 span, .menu-btn-2 span::before, .menu-btn-2 span::after,
+        .menu-btn-3 span, .menu-btn-3 span::before, .menu-btn-3 span::after {
+            transform: rotateY(180deg);
+            transition: .5s ease-in-out;
+        }
+
+        .menu-btn-2.active {
+            transform: rotateY(180deg);
+            transition: .5s ease-in-out;
+        }
+
+        .menu-btn-4 span, .menu-btn-4 span::before, .menu-btn-4 span::after {
+            height: 3px;
+            transition: .5s ease-in-out;
+        }
+
+        .menu-btn-4.active span {
+            border-radius: 1px 0px 0px 1px;
+        }
+
+        .menu-btn-4.active span::before {
+            right: 24px;
+            width: 17px;
+            top: 7.8px;
+            border-radius: 1px 0px 0px 1px;
+            transform: rotate(-34deg);
+        }
+
+        .menu-btn-4.active span::after {
+            right: 24px;
+            width: 17px;
+            top: -7.8px;
+            border-radius: 1px 0px 0px 1px;
+            transform: rotate(34deg);
+        }
+
+        .menu-btn-5 span:nth-child(1), .menu-btn-5 span:nth-child(1)::before, 
+        .menu-btn-5 span:nth-child(1)::after {
+            background: #E91E63;
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            margin-top: 13px;
+            transition: .3s ease-in-out;
+        }
+
+        .menu-btn-5 span:nth-child(1)::before {
+            margin-top: -12px;
+            transition: .3s ease-in-out .3s;
+        }
+
+        .menu-btn-5 span:nth-child(1)::after {
+            margin-top: 12px;
+            transition: .3s ease-in-out .3s;
+        }
+
+        .menu-btn-5 span:nth-child(2) {
+            background: #E91E63;
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 3px;
+            margin-top: 13px;
+            transform: rotate(-45deg);
+            transition: .3s ease-in-out;
+        }
+
+        .menu-btn-5.active span:nth-child(1)::before,
+        .menu-btn-5.active span:nth-child(1)::after {
+            margin-top: 0;
+        }
+
+        .menu-btn-5.active span:nth-child(1) {
+            transform: rotate(45deg);
+            transition: .5s ease-in-out .5s;
+        }
+
+        .menu-btn-5.active span:nth-child(2) {
+            width: 40px;
+            transition: .3s ease-in-out .8s;
+        }
+
+        .menu-btn-6 span, .menu-btn-6 span::before, .menu-btn-6 span::after {
+            background: #795548;
+            height: 3px;
+            transition: .3s ease-in-out .3s;
+        }
+
+        .menu-btn-6 span::before, .menu-btn-6 span::after {
+            transition: .3s ease-in-out;
+        }
+
+        .menu-btn-6.active span {
+            background: transparent;
+            transform: rotate(-90deg);
+            transition: .5s ease-in-out;
+        }
+
+        .menu-btn-6.active span::before {
+            transform: rotate(-45deg);
+            transition-delay: .5s;
+        }
+
+        .menu-btn-6.active span::after {
+            transform: rotate(45deg);
+            transition-delay: .5s;
+        }
+
+        .menu-btn-7, .menu-btn-8 {
+            height: 40px;
+            width: 40px;
+            cursor: pointer;
+            position: relative;
+            border-radius: 100%;
+            transition: .5s ease-in-out;
+        }
+
+        .menu-btn-7 {
+            border: 4px solid #00bcd4;
+        }
+
+        .menu-btn-8 {
+            border: 4px solid #9C27B0;
+        }
+
+        .menu-btn-7 span:nth-child(1), .menu-btn-7 span:nth-child(2),
+        .menu-btn-8 span:nth-child(1), .menu-btn-8 span:nth-child(2) {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 5px;
+            margin-top: 18px;
+        }
+
+        .menu-btn-7 span:nth-child(1), .menu-btn-7 span:nth-child(2) {
+            background: #00BCD4;
+        }
+
+        .menu-btn-8 span:nth-child(1), .menu-btn-8 span:nth-child(2) {
+            background: #9C27B0;
+            transition: .5s ease-in-out;
+        }
+
+        .menu-btn-7 span:nth-child(1), .menu-btn-8 span:nth-child(1) {
+            right: 15.1px;
+            transform: rotate(45deg);
+        }
+
+        .menu-btn-7 span:nth-child(2), .menu-btn-8 span:nth-child(2) {
+            right: 4.5px;
+            transform: rotate(-45deg);
+        }
+
+        .menu-btn-7.active {
+            transform: rotateX(-180deg);
+        }
+
+        .menu-btn-8.active span:nth-child(1), .menu-btn-8.active span:nth-child(2) {
+            margin-top: 16px;
+        }
+
+        .menu-btn-8.active span:nth-child(1) {
+            transform: rotate(-45deg);
+        }
+
+        .menu-btn-8.active span:nth-child(2) {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>انواع منوهای متحرک</h1>
+        
+        <!-- بخش اول: منوهای 1 تا 8 -->
+        <div class="menu-section">
+            <h2>منوهای 1 تا 8</h2>
+            <div class="menu-container">
+                <div class="menu btn1" data-menu="1">
+                    <div class="icon-left"></div>
+                    <div class="icon-right"></div>
+                </div>
+                <div class="menu btn2" data-menu="2">
+                    <div class="icon"></div>
+                </div>
+                <div class="menu btn3" data-menu="3">
+                    <div class="icon"></div>
+                </div>
+                <div class="menu btn4" data-menu="4">
+                    <div class="icon"></div>
+                </div>
+                <div class="menu btn5" data-menu="5">
+                    <div class="icon"></div>
+                </div>
+                <div class="menu btn6" data-menu="6">
+                    <div class="icon"></div>
+                </div>
+                <div class="menu btn7" data-menu="7">
+                    <div class="icon-E"></div>
+                    <div class="icon-X"></div>
+                </div>
+                <div class="menu btn8" data-menu="8">
+                    <div class="icon-E"></div>
+                    <div class="icon-X"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- بخش دوم: منوهای 9 تا 15 -->
+        <div class="menu-section">
+            <h2>منوهای 9 تا 15</h2>
+            <div class="menu-container">
+                <div class="menu btn9" data-menu="9">
+                    <div class="icon"></div>
+                </div>
+                <div class="menu btn10" data-menu="10">
+                    <div class="icon"></div>
+                </div>
+                <div class="menu btn11" data-menu="11">
+                    <div class="icon-left"></div>
+                    <div class="icon-right"></div>
+                </div>
+                <div class="menu btn12" data-menu="12">
+                    <div class="icon"></div>
+                </div>
+                <div class="menu btn13" data-menu="13">
+                    <div class="icon"></div>
+                </div>
+                <div class="menu btn14" data-menu="14">
+                    <div class="icon-circle"></div>
+                    <div class="icon"></div>
+                </div>
+                <div class="menu btn15" data-menu="15">
+                    <div class="icon"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- بخش سوم: منوهای جدید -->
+        <div class="menu-section">
+            <h2>منوهای جدید</h2>
+            <div class="all-btn">
+                <div class="menu-btn-1" onclick="menuBtnFunction(this)">
+                    <span></span>
+                </div>
+                <div class="menu-btn-2" onclick="menuBtnFunction(this)">
+                    <span></span>
+                </div>
+                <div class="menu-btn-3" onclick="menuBtnFunction(this)">
+                    <span></span>
+                </div>
+                <div class="menu-btn-4" onclick="menuBtnFunction(this)">
+                    <span></span>
+                </div>
+                <div class="menu-btn-5" onclick="menuBtnFunction(this)">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-btn-6" onclick="menuBtnFunction(this)">
+                    <span></span>                
+                </div>
+                <div class="menu-btn-7" onclick="menuBtnFunction(this)">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-btn-8" onclick="menuBtnFunction(this)">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // تابع برای فعال‌سازی منوها
+        function menuBtnFunction(element) {
+            element.classList.toggle("active");
+        }
+
+        // اضافه کردن event listener برای منوهای اصلی
+        document.querySelectorAll('.menu').forEach(menu => {
+            menu.addEventListener('click', function() {
+                this.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

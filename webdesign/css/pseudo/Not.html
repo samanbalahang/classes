@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not</title>
+    <style>
+        /* تمام پاراگراف‌ها به جز آنهایی که کلاس special دارند */
+        p:not(.special) {
+            background-color: #ffe6e6;
+            padding: 8px;
+        }
+
+        /* تمام اینپوت‌ها به جز نوع ایمیل */
+        input:not([type="email"]) {
+            border: 2px solid #333;
+            margin: 5px;
+        }
+
+        /* تمام المان‌ها به جز آنهایی که غیرفعال هستند */
+        input:not(:disabled) {
+            background-color: #51c9a3;
+        }
+
+        /* ترکیب چند شرط */
+        p:not(.special):not(:first-child) {
+            border-right: 3px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="special">پاراگراف ویژه</p>
+        <p>پاراگراف معمولی</p>
+        <p class="special">پاراگراف ویژه دیگر</p>
+        <p>پاراگراف دیگر</p>
+        <div>این دیو است</div>
+    </div>
+    <form action="#">
+        <input type="text" placeholder="متن معمولی">
+        <br>
+        <input type="text" disabled placeholder="متن غیرفعال">
+          <br>
+        <input type="email"  placeholder="email@emailprovider.com">
+          <br>
+        <input type="submit" value="درج">
+    </form>
+
+
+</body>
+
+</html>

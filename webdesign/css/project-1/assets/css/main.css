@@ -1,0 +1,54 @@
+/* ایمپورت تمام فایل‌های CSS */
+@import url("font.css");
+@import url('variables.css');
+
+@import url('header.css');
+@import url('hero.css');
+@import url('about.css');
+@import url('skills.css');
+@import url('projects.css');
+@import url('contact.css');
+@import url('footer.css');
+@import url('responsive.css');
+
+/* استایل‌های عمومی */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0;
+}

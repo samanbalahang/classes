@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش وسط چین کردن</title>
+    <style>
+        /* استایل پایه */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        /* وسط چین متن */
+        .text-center-example {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .centered-text {
+            text-align: center;
+            font-size: 1.2em;
+            color: #667eea;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .normal-text {
+            text-align: right;
+            color: #666;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        /* وسط چین عناصر اینلاین */
+        .inline-center-example {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .inline-container {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px dashed #ddd;
+        }
+
+        .inline-item {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background: #667eea;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* وسط چین با Flexbox */
+        .flex-center-example {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        /* وسط چین افقی */
+        .flex-horizontal {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px dashed #90caf9;
+        }
+
+        /* وسط چین عمودی */
+        .flex-vertical {
+            display: flex;
+            align-items: center;
+            height: 150px;
+            gap: 15px;
+            padding: 20px;
+            background: #f3e5f5;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px dashed #ce93d8;
+        }
+
+        /* وسط چین کامل (افقی و عمودی) */
+        .flex-both {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            padding: 20px;
+            background: #e8f5e8;
+            border-radius: 8px;
+            border: 2px dashed #a5d6a7;
+        }
+
+        .flex-item {
+            padding: 15px 25px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        /* وسط چین با Margin Auto */
+        .margin-center-example {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        /* وسط چین افقی با margin auto */
+        .block-center-horizontal {
+            width: 70%;
+            margin: 20px auto;
+            padding: 30px;
+            background: #fff3e0;
+            border: 2px dashed #ffb74d;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: #e65100;
+        }
+
+        /* وسط چین عمودی و افقی با ترکیب روش‌ها */
+        .block-center-vertical {
+            height: 300px;
+            position: relative;
+            background: #fce4ec;
+            border: 2px dashed #f48fb1;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .centered-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 30px;
+            background: #ad1457;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        /* مثال ترکیبی - کارت پروفایل */
+        .combined-example {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-card {
+            max-width: 400px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .profile-header {
+            padding: 40px 30px 20px;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin: 0 auto 20px;
+            display: block;
+            background: #ddd;
+        }
+
+        .profile-name {
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            color: rgba(255,255,255,0.8);
+            font-size: 1em;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .profile-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* رسپانسیو */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+            
+            .profile-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .profile-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. وسط‌چین متن با text-align -->
+    <div class="container">
+        <div class="text-center-example">
+            <h2 class="section-title">وسط چین متن با text-align</h2>
+            <p class="centered-text">این متن در وسط قرار گرفته است</p>
+            <p class="normal-text">این متن به صورت عادی راست چین است</p>
+        </div>
+    </div>
+
+    <!-- 2. وسط‌چین عناصر اینلاین در یک تگ بلاک -->
+    <div class="container">
+        <div class="inline-center-example">
+            <h2 class="section-title">وسط چین عناصر اینلاین</h2>
+            <div class="inline-container">
+                <span class="inline-item">عنصر اینلاین ۱</span>
+                <span class="inline-item">عنصر اینلاین ۲</span>
+                <span class="inline-item">عنصر اینلاین ۳</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. وسط‌چین با Flexbox -->
+    <div class="container">
+        <div class="flex-center-example">
+            <h2 class="section-title">وسط چین با Flexbox</h2>
+            
+            <div class="flex-horizontal">
+                <div class="flex-item">آیتم ۱</div>
+                <div class="flex-item">آیتم ۲</div>
+                <div class="flex-item">آیتم ۳</div>
+            </div>
+            
+            <div class="flex-vertical">
+                <div class="flex-item">آیتم عمودی ۱</div>
+                <div class="flex-item">آیتم عمودی ۲</div>
+            </div>
+            
+            <div class="flex-both">
+                <div class="flex-item">وسط چین کامل</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. وسط‌چین با Margin Auto -->
+    <div class="container">
+        <div class="margin-center-example">
+            <h2 class="section-title">وسط چین با Margin Auto</h2>
+            
+            <div class="block-center-horizontal">
+                این div با margin auto وسط چین شده است
+            </div>
+            
+            <div class="block-center-vertical">
+                <div class="centered-content">
+                    این محتوا هم افقی و هم عمودی وسط چین شده
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. مثال نهایی ترکیبی -->
+    <div class="container">
+        <div class="combined-example">
+            <h2 class="section-title">مثال ترکیبی - کارت پروفایل</h2>
+            
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-image"></div>
+                    <h3 class="profile-name">محمد رضایی</h3>
+                    <p class="profile-title">توسعه‌دهنده فرانت‌اند</p>
+                </div>
+                
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">۱۲۴</span>
+                        <span class="stat-label">پروژه</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">۸۹</span>
+                        <span class="stat-label">مشتری</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">۵</span>
+                        <span class="stat-label">سال تجربه</span>
+                    </div>
+                </div>
+                
+                <div class="profile-actions">
+                    <button class="btn btn-primary">ارتباط با من</button>
+                    <button class="btn btn-secondary">مشاهده رزومه</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

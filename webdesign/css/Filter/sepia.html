@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sapia</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #e74c3c, #3498db, #f1c40f);
+            margin: 30px;
+            display: inline-block;
+            transition: filter 0.3s;
+        }
+
+        .sepia-50:hover {
+            filter: sepia(0.5);
+        }
+
+        .sepia-100:hover {
+            filter: sepia(1);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box sepia-50">هاور کن - ۵۰% سپیا</div>
+    <div class="box sepia-100">هاور کن - ۱۰۰% سپیا</div>
+
+</body>
+
+</html>

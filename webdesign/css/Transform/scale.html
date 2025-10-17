@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scale</title>
+            <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #e74c3c;
+            margin: 30px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .big:hover {
+            transform: scale(2);
+        }
+
+        .small:hover {
+            transform: scale(0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box big">هاور کن - بزرگ میشه</div>
+    <div class="box small">هاور کن - کوچک میشه</div>
+
+</body>
+</html>

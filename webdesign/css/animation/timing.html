@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timing</title>
+       <style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background: #2ecc71;
+        margin: 30px;
+        display: inline-block;
+    }
+
+    @keyframes move-right {
+        from { transform: translateX(0); }
+        to { transform: translateX(200px); }
+    }
+
+    .ease { animation: move-right 3s ease infinite; }
+    .linear { animation: move-right 3s linear infinite; }
+    .ease-in { animation: move-right 3s ease-in infinite; }
+    .ease-out { animation: move-right 3s ease-out infinite; }
+</style>
+
+</head>
+<body>
+ 
+<div class="box ease">ease</div>
+<div class="box linear">linear</div>
+<div class="box ease-in">ease-in</div>
+<div class="box ease-out">ease-out</div>
+
+</body>
+</html>

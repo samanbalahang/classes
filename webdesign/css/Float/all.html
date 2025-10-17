@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مثال ترکیبی Float, Clear, Shape-outside, Shape-margin</title>
+    <style>
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            border: 2px solid #333;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .custom-shape {
+            width: 250px;
+            height: 250px;
+            float: left;
+            shape-outside: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            shape-margin: 20px;
+            margin: 0 25px 25px 0;
+        }
+        
+        .floating-box {
+            float: right;
+            width: 150px;
+            height: 150px;
+            background-color: #FF5722;
+            margin: 0 0 15px 25px;
+            padding: 10px;
+            color: white;
+        }
+        
+        .cleared-section {
+            clear: both;
+            background-color: #E1F5FE;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        
+        .content {
+            text-align: justify;
+            line-height: 1.7;
+        }
+        
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <div class="container">
+        <div class="custom-shape"></div>
+        <div class="floating-box">عنصر شناور ساده</div>
+        
+        <div class="content">
+            <h2>مثال ترکیبی از ویژگی‌های CSS</h2>
+            <p>در این مثال، از چندین ویژگی CSS به صورت ترکیبی استفاده شده است. عنصر آبی-بنفش با ویژگی‌های float، shape-outside و shape-margin یک شکل چندضلعی ایجاد کرده و متن در اطراف آن جریان یافته است.</p>
+            <p>عنصر نارنجی نیز یک عنصر شناور ساده است که در سمت راست قرار گرفته است. ترکیب این عناصر با یکدیگر یک طرح‌بندی پویا و جذاب ایجاد کرده است.</p>
+            <p>ویژگی‌های shape-outside و shape-margin به طراحان وب این امکان را می‌دهند که طرح‌بندی‌های خلاقانه‌تری ایجاد کنند و از طرح‌بندی‌های مستطیلی سنتی فراتر روند.</p>
+        </div>
+        
+        <div class="cleared-section">
+            <h3>بخش cleared</h3>
+            <p>این بخش با ویژگی clear:both در زیر تمام عناصر شناور قرار گرفته است. از این ویژگی برای اطمینان از اینکه یک عنصر در زیر عناصر شناور قرار می‌گیرد استفاده می‌شود.</p>
+        </div>
+    </div>
+</body>
+</html>

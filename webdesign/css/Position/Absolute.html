@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute</title>
+    <style>
+        .container{
+            width: 80%;
+            margin: auto;
+            min-height: 100vh;
+            border:2px solid black
+        }
+        .position-relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 10px;
+            /* 10px از بالای والد نسبی */
+            right: 15px;
+            /* 15px از راست والد نسبی */
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container position-relative">
+        <div class="box absolute">Absolute</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation-direction</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #9b59b6;
+            margin: 30px;
+            display: inline-block;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(100px);
+            }
+        }
+
+        .normal {
+            animation: slide 2s infinite normal;
+        }
+
+        .reverse {
+            animation: slide 2s infinite reverse;
+        }
+
+        .alternate {
+            animation: slide 2s infinite alternate;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box normal">normal</div>
+    <div class="box reverse">reverse</div>
+    <div class="box alternate">alternate</div>
+
+</body>
+
+</html>

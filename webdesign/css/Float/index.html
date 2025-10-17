@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش Float</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            border: 2px solid #333;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .float-left {
+            float: left;
+            width: 150px;
+            height: 150px;
+            background-color: #4CAF50;
+            margin: 0 15px 15px 0;
+            padding: 10px;
+            color: white;
+        }
+        
+        .float-right {
+            float: right;
+            width: 150px;
+            height: 150px;
+            background-color: #2196F3;
+            margin: 0 0 15px 15px;
+            padding: 10px;
+            color: white;
+        }
+        
+        .content {
+            text-align: justify;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <div class="container">
+        <div class="float-left">عنصر شناور چپ</div>
+        <div class="float-right">عنصر شناور راست</div>
+        <div class="content">
+            <h2>مثال ویژگی float</h2>
+            <p>این یک متن نمونه است که در اطراف عناصر شناور جریان می‌یابد. عنصر سبز رنگ در سمت چپ و عنصر آبی رنگ در سمت راست شناور شده‌اند. متن به طور خودکار در اطراف این عناصر جریان پیدا می‌کند و فضای خالی را پر می‌کند.</p>
+            <p>ویژگی float برای ایجاد طرح‌بندی‌های ساده و قرار دادن عناصر در کنار یکدیگر بسیار مفید است. با این حال، برای طرح‌بندی‌های پیچیده‌تر، معمولاً از Flexbox یا Grid استفاده می‌شود.</p>
+        </div>
+    </div>
+</body>
+</html>

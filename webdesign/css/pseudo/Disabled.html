@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disabled</title>
+    <style>
+        input:disabled {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        select:disabled,
+        textarea:disabled {
+            background-color: #f0f0f0;
+            color: #666;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <input type="text" placeholder="فعال">
+        <br>
+        <input type="text" disabled placeholder="غیرفعال">
+         <br>
+        <input type="password" disabled placeholder="پسورد غیرفعال">
+         <br>
+
+        <select title="validate" name="validate" disabled >
+            <option>انتخاب غیرفعال</option>
+        </select>
+        <br>
+        <label for="disarea">
+            این لیبل است
+        </label>
+        <br>
+        <textarea disabled id="disarea">این متن غیرفعال است</textarea>
+        <br>
+        <input type="submit" value="درج">
+
+
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid #333;
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        .item {
+            padding: 20px;
+            margin: 5px;
+            background: #E91E63;
+            color: white;
+            text-align: center;
+        }
+
+        .first {
+            order: -1;
+        }
+
+        .last {
+            order: 1;
+        }
+
+        .middle {
+            order: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="item last">۳ (order: 1)</div>
+        <div class="item first">۱ (order: -1)</div>
+        <div class="item middle">۲ (order: 0)</div>
+    </div>
+
+</body>
+
+</html>

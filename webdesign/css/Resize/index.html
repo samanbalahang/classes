@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize</title>
+    
+<style>
+    .container {
+        width: 400px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        margin: 30px auto;
+        font-family: Arial, sans-serif;
+    }
+
+    .resizable-box {
+        width: 300px;
+        height: 120px;
+        padding: 15px;
+        background: #3498db;
+        color: white;
+        border: 2px solid #2980b9;
+        margin: 15px 0;
+        overflow: auto;
+        border-radius: 5px;
+    }
+
+    .resize-none {
+        resize: none;
+        background: #e74c3c;
+        border-color: #c0392b;
+    }
+
+    .resize-both {
+        resize: both;
+        background: #2ecc71;
+        border-color: #27ae60;
+    }
+
+    .resize-horizontal {
+        resize: horizontal;
+        background: #f39c12;
+        border-color: #d35400;
+    }
+
+    .resize-vertical {
+        resize: vertical;
+        background: #9b59b6;
+        border-color: #8e44ad;
+    }
+
+    .textarea-base {
+        width: 100%;
+        height: 80px;
+        padding: 12px;
+        border: 2px solid #bdc3c7;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        margin: 10px 0;
+        box-sizing: border-box;
+    }
+
+    .title {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .section-title {
+        color: #34495e;
+        margin: 25px 0 15px 0;
+        border-bottom: 2px solid #ecf0f1;
+        padding-bottom: 8px;
+    }
+</style>
+
+</head>
+
+<body>
+
+
+<div class="container">
+    <h2 class="title">آموزش ویژگی Resize در CSS</h2>
+    
+    <h3 class="section-title">انواع resize روی divها:</h3>
+    
+    <div class="resizable-box resize-none">
+        <strong>resize: none</strong><br>
+        تغییر اندازه این باکس غیرفعال است
+    </div>
+    
+    <div class="resizable-box resize-both">
+        <strong>resize: both</strong><br>
+        می‌توانید این باکس را در هر دو جهت (عرض و ارتفاع) تغییر اندازه دهید
+    </div>
+    
+    <div class="resizable-box resize-horizontal">
+        <strong>resize: horizontal</strong><br>
+        فقط می‌توانید عرض این باکس را تغییر دهید
+    </div>
+    
+    <div class="resizable-box resize-vertical">
+        <strong>resize: vertical</strong><br>
+        فقط می‌توانید ارتفاع این باکس را تغییر دهید
+    </div>
+
+    <h3 class="section-title">انواع resize روی textarea:</h3>
+    
+    <textarea class="textarea-base resize-none" placeholder="این textarea قابل تغییر اندازه نیست"></textarea>
+    
+    <textarea class="textarea-base resize-both" placeholder="این textarea در هر دو جهت قابل تغییر است"></textarea>
+    
+    <textarea class="textarea-base resize-horizontal" placeholder="فقط عرض این textarea قابل تغییر است"></textarea>
+    
+    <textarea class="textarea-base resize-vertical" placeholder="فقط ارتفاع این textarea قابل تغییر است"></textarea>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid #333;
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        .item {
+            padding: 20px;
+            margin: 5px;
+            background: #FF5722;
+            color: white;
+            text-align: center;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .flex-2 {
+            flex: 2;
+        }
+
+        .flex-auto {
+            flex: auto;
+        }
+
+        .flex-none {
+            flex: none;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="item flex-1">flex: 1</div>
+        <div class="item flex-2">flex: 2</div>
+        <div class="item flex-auto">flex: auto</div>
+        <div class="item flex-none">flex: none</div>
+    </div>
+
+</body>
+
+</html>

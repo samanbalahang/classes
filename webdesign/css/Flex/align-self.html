@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-self</title>
+        <style>
+    .container {
+        display: flex;
+        height: 200px;
+        border: 2px solid #333;
+        margin: 20px 0;
+        padding: 10px;
+    }
+    
+    .item {
+        padding: 20px;
+        margin: 5px;
+        background: #607D8B;
+        color: white;
+        text-align: center;
+    }
+    
+    .self-start { align-self: flex-start; }
+    .self-end { align-self: flex-end; }
+    .self-center { align-self: center; }
+    .self-stretch { align-self: stretch; }
+</style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="item">عادی</div>
+    <div class="item self-start">شروع</div>
+    <div class="item">عادی</div>
+    <div class="item self-center">وسط</div>
+    <div class="item self-end">پایان</div>
+</div>
+
+</body>
+</html>

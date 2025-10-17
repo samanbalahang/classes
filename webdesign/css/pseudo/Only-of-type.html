@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only-of-type</title>
+    <style>
+        .container {
+            border: 2px solid #333;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        p:only-of-type {
+            background-color: lightgreen;
+            padding: 10px;
+        }
+
+        div:only-of-type {
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        span:only-of-type {
+            background-color: gold;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>من تنها پاراگراف هستم</p>
+        <span>اسپن اول</span>
+        <span>اسپن دوم</span>
+        <div>من تنها دیو از این نوع هستم</div>
+    </div>
+
+
+
+</body>
+
+</html>

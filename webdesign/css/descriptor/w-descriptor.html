@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w-descriptor</title>
+        <style>
+            .responsive-img {
+            width: 100%;
+            height: auto;
+            }
+        </style>
+</head>
+<body>
+
+
+<img 
+  src="../../images/book.jpg" 
+  srcset="../../images/book.jpg  400w,
+          ../../images/book.jpg  800w,
+          ../../images/book.jpg   1200w,
+          ../../images/book.jpg   1600w"
+  sizes="(max-width: 600px) 100vw,
+         (max-width: 1200px) 50vw,
+         400px"
+  alt="تصویر نمونه"
+  class="responsive-img">
+
+</body>
+</html>

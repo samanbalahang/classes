@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cubic-bezier</title>
+        <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            background-color: #4a69bd;
+            transition: transform 0.5s cubic-bezier(0.42, 0, 1, 1); /* ease-in */
+        }
+        .box:hover {
+            transform: translateX(100px);
+        }
+        .box2{
+            transition: transform 0.5s cubic-bezier(.17,.67,.78,-0.23); /* ease-in */
+
+        }
+        .box3{
+            transition: transform 0.5s cubic-bezier(0,1.42,1,-0.68); /* ease-in */
+
+        }
+        .box4{
+            transition: transform 0.5s cubic-bezier(0,.97,.01,1); /* ease-in */
+
+        }
+        .box5{
+            transition: transform 0.5s cubic-bezier(.36,.64,.53,.71); /* ease-in */
+
+        }
+        .box6{
+            transition: transform 0.5s cubic-bezier(.61,.52,.6,1.04); /* ease-in */
+
+        }
+        .box7{
+            transition: transform 0.5s cubic-bezier(1,-0.08,0,.42); /* ease-in */
+
+        }
+        .box8{
+            transition: transform 0.5s cubic-bezier(1,.44,0,.42); /* ease-in */
+
+        }
+        .box9{
+            transition: transform 0.5s cubic-bezier(1,.44,.75,.04); /* ease-in */
+
+        }
+    </style>
+</head>
+<body>
+       <div class="box">1</div>
+       <div class="box box2">2</div>
+       <div class="box box3">3</div>
+       <div class="box box4">4</div>
+       <div class="box box5">5</div>
+       <div class="box box6">6</div>
+       <div class="box box7">7</div>
+       <div class="box box8">8</div>
+       <div class="box box9">9</div>
+</body>
+</html>

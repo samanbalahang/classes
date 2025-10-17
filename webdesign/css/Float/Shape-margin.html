@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش Shape-margin</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            border: 2px solid #333;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .shape {
+            width: 200px;
+            height: 200px;
+            float: left;
+            shape-outside: circle(50%);
+            clip-path: circle(50%);
+            background-color: #009688;
+        }
+        
+        .no-margin {
+            shape-margin: 0;
+            margin: 0 20px 20px 0;
+        }
+        
+        .with-margin {
+            shape-margin: 30px;
+            margin: 0 20px 20px 0;
+        }
+        
+        .content {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        
+        .comparison {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .example {
+            width: 48%;
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <div class="container">
+        <h2>مقایسه shape-margin</h2>
+        
+        <div class="comparison">
+            <div class="example">
+                <h3>بدون shape-margin</h3>
+                <div class="shape no-margin"></div>
+                <div class="content">
+                    <p>در این مثال، از shape-margin استفاده نشده است. متن مستقیماً در کنار شکل دایره‌ای قرار می‌گیرد و فاصله‌ای بین متن و شکل وجود ندارد.</p>
+                </div>
+            </div>
+            
+            <div class="example">
+                <h3>با shape-margin: 30px</h3>
+                <div class="shape with-margin"></div>
+                <div class="content">
+                    <p>در این مثال، از shape-margin: 30px استفاده شده است. همانطور که مشاهده می‌کنید، فاصله 30 پیکسلی بین شکل دایره‌ای و متن ایجاد شده است که خوانایی را بهبود می‌بخشد.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h3>نتیجه‌گیری</h3>
+            <p>ویژگی shape-margin برای ایجاد فاصله بین شکل تعریف شده و محتوای اطراف آن استفاده می‌شود. این ویژگی خوانایی را بهبود می‌بخشد و ظاهر زیباتری به طرح‌بندی می‌دهد.</p>
+        </div>
+    </div>
+</body>
+</html>

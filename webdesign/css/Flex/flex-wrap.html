@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-wrap</title>
+    <style>
+        .container {
+            display: flex;
+            width: 300px;
+            border: 2px solid #333;
+            margin: 20px 0;
+        }
+
+        .item {
+            width: 100px;
+            padding: 20px;
+            margin: 5px;
+            background: #2196F3;
+            color: white;
+            text-align: center;
+        }
+
+        .nowrap {
+            flex-wrap: nowrap;
+        }
+
+        .wrap {
+            flex-wrap: wrap;
+        }
+
+        .wrap-reverse {
+            flex-wrap: wrap-reverse;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container nowrap">
+        <div class="item">۱</div>
+        <div class="item">۲</div>
+        <div class="item">۳</div>
+        <div class="item">۴</div>
+    </div>
+
+    <div class="container wrap">
+        <div class="item">۱</div>
+        <div class="item">۲</div>
+        <div class="item">۳</div>
+        <div class="item">۴</div>
+    </div>
+
+    <div class="container wrap-reverse">
+        <div class="item">۱</div>
+        <div class="item">۲</div>
+        <div class="item">۳</div>
+        <div class="item">۴</div>
+    </div>
+
+</body>
+
+</html>

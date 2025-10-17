@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complex</title>
+
+    <style>
+        .fancy-quote::before {
+            content: "“";
+            font-size: 4em;
+            color: #ddd;
+            float: right;
+            line-height: 0.8;
+            margin-left: 10px;
+        }
+
+        .fancy-quote::after {
+            content: "”";
+            font-size: 4em;
+            color: #ddd;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+        }
+
+        .fancy-quote::first-line {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .feature::before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .feature::after {
+            content: " ★";
+            color: #f39c12;
+            font-size: 0.8em;
+        }
+
+        .feature::first-letter {
+            font-size: 1.2em;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <blockquote class="fancy-quote">
+        بهترین راه برای پیش‌بینی آینده، ساختن آن است.
+    </blockquote>
+
+    <div class="feature-list">
+        <div class="feature">امنیت بالا</div>
+        <div class="feature">سرعت فوق‌العاده</div>
+        <div class="feature">پشتیبانی ۲۴ ساعته</div>
+    </div>
+
+</body>
+
+</html>

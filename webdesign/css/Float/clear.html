@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش Clear</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            border: 2px solid #333;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .float-box {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: #FF9800;
+            margin: 0 15px 15px 0;
+            padding: 10px;
+            color: white;
+        }
+        
+        .normal-paragraph {
+            background-color: #E0E0E0;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .cleared-paragraph {
+            background-color: #E0E0E0;
+            padding: 10px;
+            clear: both; /* این پاراگراف در زیر عنصر شناور قرار می‌گیرد */
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <div class="container">
+        <div class="float-box">عنصر شناور</div>
+        <p class="normal-paragraph">این پاراگراف در کنار عنصر شناور قرار می‌گیرد و متن در اطراف آن جریان می‌یابد.</p>
+        <p class="cleared-paragraph">این پاراگراف با ویژگی clear:both در زیر عنصر شناور قرار می‌گیرد و از ادامه جریان متن جلوگیری می‌کند.</p>
+    </div>
+</body>
+</html>

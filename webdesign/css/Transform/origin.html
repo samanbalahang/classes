@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>origin </title>
+        <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #2ecc71;
+            margin: 30px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .from-center:hover {
+            transform: scale(2);
+            transform-origin: center;
+        }
+
+        .from-corner:hover {
+            transform: scale(2);
+            transform-origin: top left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box from-center">هاور کن - از مرکز بزرگ میشه</div>
+    <div class="box from-corner">هاور کن - از گوشه بزرگ میشه</div>
+</body>
+</html>

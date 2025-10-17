@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shorthand</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #2ecc71;
+            margin: 30px;
+            display: inline-block;
+        }
+
+        @keyframes complex-animation {
+            0% {
+                transform: translateX(0) rotate(0deg);
+                background: #2ecc71;
+            }
+
+            50% {
+                transform: translateX(100px) rotate(180deg);
+                background: #e74c3c;
+            }
+
+            100% {
+                transform: translateX(0) rotate(360deg);
+                background: #3498db;
+            }
+        }
+
+        .shorthand {
+            /* name, duration, timing-function, delay, iteration-count, direction */
+            animation: complex-animation 3s ease-in-out 1s infinite alternate;
+        }
+
+        .detailed {
+            animation-name: complex-animation;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="box shorthand">Shorthand</div>
+    <div class="box detailed">Detailed</div>
+</body>
+
+</html>

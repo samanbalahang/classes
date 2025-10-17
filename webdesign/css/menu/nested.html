@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت آموزشی - منوی بازشونده</title>
+    <style>
+        /* استایل‌های پایه */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* هدر */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            /* display: flex; */
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* ناوبری اصلی */
+        nav {
+            background-color: white;
+            padding: 0 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            background-color: #f8f9fa;
+            border-bottom: 3px solid #667eea;
+            color: #667eea;
+        }
+
+        /* منوی بازشونده */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            list-style: none;
+        }
+
+        .dropdown-item {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 0.8rem 1rem;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-link:hover {
+            background-color: #667eea;
+            color: white;
+            padding-right: 1.5rem;
+        }
+
+        /* نمایش منوی بازشونده هنگام هاور */
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* محتوای اصلی */
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* فوتر */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر سایت -->
+    <header>
+        <div class="header-content">
+            <div class="logo">آکادمی برنامه‌نویسی</div>
+            <div>آموزش HTML, CSS, JavaScript</div>
+        </div>
+    </header>
+
+    <!-- ناوبری اصلی -->
+    <nav>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">خانه</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">دوره‌ها</a>
+                <!-- منوی بازشونده -->
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">HTML & CSS</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">JavaScript</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">React.js</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">Node.js</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">مقالات</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">درباره ما</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">تماس با ما</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- محتوای اصلی -->
+    <main class="main-content">
+        <section class="content-section">
+            <h1>به سایت آموزشی ما خوش آمدید</h1>
+            <p>این یک سایت نمونه برای آموزش ایجاد منوی بازشونده با HTML و CSS خالص است.</p>
+            <p>منوی بازشونده در بخش "دوره‌ها" قابل مشاهده است. روی آن هاور کنید تا زیرمنو نمایش داده شود.</p>
+        </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer>
+        <p>© 2024 آکادمی برنامه‌نویسی - تمام حقوق محفوظ است</p>
+    </footer>
+</body>
+</html>

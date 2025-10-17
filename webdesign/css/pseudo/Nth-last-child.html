@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nth-last-child</title>
+    <style>
+        .items {
+            border: 2px solid #666;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        div:nth-last-child(1) {
+            background-color: gold;
+            font-weight: bold;
+        }
+
+        div:nth-last-child(2) {
+            background-color: silver;
+        }
+
+        div:nth-last-child(3) {
+            background-color: #cd7f32; /* برنز */
+        }
+
+        div:nth-last-child(2n) {
+             /* n start from zero so 2n mean 0 2 4 6  */
+            border-bottom: 2px dashed red;
+        }
+
+        div:nth-last-child(2n+1) {
+             /* n start from zero so 2n+1 mean 1 3 5 7  */
+            border-top: 2px dotted blue;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="items">
+        <div>آیتم 1 (آخر از آخر)</div>
+        <div>آیتم 2</div>
+        <div>آیتم 3</div>
+        <div>آیتم 4</div>
+        <div>آیتم 5 (اول از آخر)</div>
+    </div>
+
+
+</body>
+</html>

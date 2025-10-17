@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nth-last-of-type</title>
+    <style>
+        .content {
+            border: 2px solid #666;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        /* پاراگراف اول از آخر */
+        p:nth-last-of-type(1) {
+            background-color: lightgreen;
+            padding: 8px;
+        }
+
+        /* پاراگراف دوم از آخر */
+        p:nth-last-of-type(2) {
+            background-color: lightblue;
+            padding: 8px;
+        }
+
+        /* پاراگراف سوم از آخر */
+        p:nth-last-of-type(3) {
+            background-color: lightyellow;
+            padding: 8px;
+        }
+
+        /* اسپن اول از آخر */
+        span:nth-last-of-type(1) {
+            border: 2px solid red;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <p>پاراگراف اول (چهارم از آخر)</p>
+        <span>اسپن اول (دوم از آخر)</span>
+        <div>دیو اول</div>
+        <p>پاراگراف دوم (سوم از آخر)</p>
+        <span>اسپن دوم (اول از آخر)</span>
+        <p>پاراگراف سوم (دوم از آخر)</p>
+        <p>پاراگراف چهارم (اول از آخر)</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digimenu - منوی دسته‌بندی</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            position: relative;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            align-items: center;
+        }
+
+        .main-list {
+            float: right;
+            position: relative;
+        }
+
+        .list-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .list-link:hover {
+            background-color: #f8f9fa;
+            border-bottom: 3px solid #007bff;
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 900px;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            visibility: hidden;
+            opacity: 0;
+            z-index: 1001;
+            padding: 1.5rem;
+            max-height: 70vh;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+        }
+
+        .base-submenu {
+            overflow-y: auto;
+            width: 30%;
+            border-left: 1px solid #e0e0e0;
+            padding-right: 1rem;
+            height: 100%;
+            max-height: calc(70vh - 3rem);
+        }
+
+        .base-menu-list {
+            margin-bottom: 0.5rem;
+        }
+
+        .base-menu-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #555;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .base-menu-link:hover, .base-menu-list.active .base-menu-link {
+            background-color: #f0f8ff;
+            color: #007bff;
+        }
+
+        .second-submenu {
+            width: 70%;
+            padding-right: 1.5rem;
+            height: 100%;
+            max-height: calc(70vh - 3rem);
+            overflow-y: auto;
+        }
+
+        .category-content {
+            display: none;
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
+        .second-submenu h1 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .second-submenu h1 a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .row::after {
+            display: table;
+            content: "";
+            clear: both;
+            float: none;
+        }
+
+        .w-1\/4 {
+            width: 25%;
+            padding: 0 0.75rem;
+            float: right;
+        }
+
+        .second-submenu ul ul {
+            margin-top: 0.5rem;
+            margin-right: 1rem;
+        }
+
+        .second-submenu li {
+            margin-bottom: 0.75rem;
+        }
+
+        .second-submenu li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .gray li a {
+            color: #666;
+            font-weight: normal;
+            font-size: 0.9rem;
+        }
+
+        .gray li {
+            margin-bottom: 0.4rem;
+        }
+
+        .main-list:hover .submenu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .float-right {
+            float: right;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        /* استایل برای موبایل */
+        @media (max-width: 768px) {
+            .submenu {
+                position: static;
+                width: 100%;
+                display: none;
+                flex-direction: column;
+            }
+
+            .main-list:hover .submenu {
+                display: flex;
+            }
+
+            .base-submenu,
+            .second-submenu {
+                width: 100%;
+                border: none;
+                padding: 0;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+
+            .w-1\/4 {
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="main-list">
+                    <a href="#" class="list-link">
+                        دسته بندی
+                    </a>
+                    <div class="submenu">
+                        <div class="base-submenu">
+                            <ul>
+                                <li class="base-menu-list active" data-category="mobile">
+                                    <a href="#" class="base-menu-link">
+                                        موبایل
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="stationery">
+                                    <a href="#" class="base-menu-link">
+                                        لوازم تحریر
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="laptop">
+                                    <a href="#" class="base-menu-link">
+                                        لپ تاپ
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="home-appliances">
+                                    <a href="#" class="base-menu-link">
+                                        کالای خانه و لوازم خانگی
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="cosmetics">
+                                    <a href="#" class="base-menu-link">
+                                        آرایشی
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="fashion">
+                                    <a href="#" class="base-menu-link">
+                                        مد و پوشاک
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="automotive">
+                                    <a href="#" class="base-menu-link">
+                                        خودرو
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="tools">
+                                    <a href="#" class="base-menu-link">
+                                        ابزارآلات
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="gold">
+                                    <a href="#" class="base-menu-link">
+                                        طلا و نقره
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="equipment">
+                                    <a href="#" class="base-menu-link">
+                                        تجهیزات
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="books">
+                                    <a href="#" class="base-menu-link">
+                                        کتاب و هنر
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="sports">
+                                    <a href="#" class="base-menu-link">
+                                        ورزش و سفر
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="gift-cards">
+                                    <a href="#" class="base-menu-link">
+                                        کارت هدیه
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="supermarket">
+                                    <a href="#" class="base-menu-link">
+                                        سوپر مارکت
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="toys">
+                                    <a href="#" class="base-menu-link">
+                                        اسباب بازی
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="local-products">
+                                    <a href="#" class="base-menu-link">
+                                        محصولات بومی
+                                    </a>
+                                </li>
+                                <li class="base-menu-list" data-category="pet-shop">
+                                    <a href="#" class="base-menu-link">
+                                        پت شاپ
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="second-submenu">
+                            <!-- محتوای موبایل -->
+                            <div id="mobile" class="category-content active">
+                                <h1>
+                                    <a href="#">
+                                        همه محصولات موبایل
+                                    </a>
+                                </h1>
+                                <div class="row">
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">گوشی‌های هوشمند</a>
+                                            <ul class="gray">
+                                                <li><a href="#">سامسونگ</a></li>
+                                                <li><a href="#">اپل</a></li>
+                                                <li><a href="#">شیائومی</a></li>
+                                                <li><a href="#">هوآوی</a></li>
+                                                <li><a href="#">نوکیا</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">گوشی‌های معمولی</a>
+                                            <ul class="gray">
+                                                <li><a href="#">گوشی ساده</a></li>
+                                                <li><a href="#">گوشی کلیددار</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">لوازم جانبی موبایل</a>
+                                            <ul class="gray">
+                                                <li><a href="#">کیف و کاور</a></li>
+                                                <li><a href="#">پاوربانک</a></li>
+                                                <li><a href="#">هدفون و هندزفری</a></li>
+                                                <li><a href="#">پایه نگهدارنده</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">شارژر و کابل</a>
+                                            <ul class="gray">
+                                                <li><a href="#">شارژر دیواری</a></li>
+                                                <li><a href="#">شارژر خودرو</a></li>
+                                                <li><a href="#">کابل USB</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">محافظ صفحه</a>
+                                            <ul class="gray">
+                                                <li><a href="#">محافظ شیشه‌ای</a></li>
+                                                <li><a href="#">محافظ نانو</a></li>
+                                                <li><a href="#">محافظ مات</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">هندزفری</a>
+                                            <ul class="gray">
+                                                <li><a href="#">هندزفری سیمی</a></li>
+                                                <li><a href="#">هندزفری بلوتوث</a></li>
+                                                <li><a href="#">هندزفری ورزشی</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">سیم کارت</a>
+                                            <ul class="gray">
+                                                <li><a href="#">سیم کارت دائمی</a></li>
+                                                <li><a href="#">سیم کارت اعتباری</a></li>
+                                                <li><a href="#">سیم کارت اینترنتی</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">حافظه جانبی</a>
+                                            <ul class="gray">
+                                                <li><a href="#">کارت حافظه</a></li>
+                                                <li><a href="#">فلش USB</a></li>
+                                                <li><a href="#">هارد اکسترنال</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- محتوای لوازم تحریر -->
+                            <div id="stationery" class="category-content">
+                                <h1>
+                                    <a href="#">
+                                        همه محصولات لوازم تحریر
+                                    </a>
+                                </h1>
+                                <div class="row">
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">مداد و خودکار</a>
+                                            <ul class="gray">
+                                                <li><a href="#">مداد سیاه</a></li>
+                                                <li><a href="#">مداد رنگی</a></li>
+                                                <li><a href="#">خودکار</a></li>
+                                                <li><a href="#">خودکار رنگی</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">دفتر و کاغذ</a>
+                                            <ul class="gray">
+                                                <li><a href="#">دفتر مشق</a></li>
+                                                <li><a href="#">دفتر یادداشت</a></li>
+                                                <li><a href="#">کاغذ A4</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">تراش و پاک‌کن</a>
+                                            <ul class="gray">
+                                                <li><a href="#">تراش</a></li>
+                                                <li><a href="#">پاک‌کن</a></li>
+                                                <li><a href="#">مدادتراش رومیزی</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">کیف و جامدادی</a>
+                                            <ul class="gray">
+                                                <li><a href="#">جامدادی</a></li>
+                                                <li><a href="#">کیف مدرسه</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">رنگ و نقاشی</a>
+                                            <ul class="gray">
+                                                <li><a href="#">مداد شمعی</a></li>
+                                                <li><a href="#">گواش</a></li>
+                                                <li><a href="#">آبرنگ</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">خط کش و گونیا</a>
+                                            <ul class="gray">
+                                                <li><a href="#">خط کش</a></li>
+                                                <li><a href="#">گونیا</a></li>
+                                                <li><a href="#">نقاله</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">منگنه و سوزن</a>
+                                            <ul class="gray">
+                                                <li><a href="#">منگنه</a></li>
+                                                <li><a href="#">سوزن منگنه</a></li>
+                                                <li><a href="#">پونز</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">چسب و قیچی</a>
+                                            <ul class="gray">
+                                                <li><a href="#">چسب ماتیکی</a></li>
+                                                <li><a href="#">چسب مایع</a></li>
+                                                <li><a href="#">قیچی</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- محتوای لپ تاپ -->
+                            <div id="laptop" class="category-content">
+                                <h1>
+                                    <a href="#">
+                                        همه محصولات لپ تاپ
+                                    </a>
+                                </h1>
+                                <div class="row">
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">لپ تاپ‌های تجاری</a>
+                                            <ul class="gray">
+                                                <li><a href="#">لنوو</a></li>
+                                                <li><a href="#">دل</a></li>
+                                                <li><a href="#">اچ پی</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">لپ تاپ‌های گیمینگ</a>
+                                            <ul class="gray">
+                                                <li><a href="#">ایسوس</a></li>
+                                                <li><a href="#">ام اس آی</a></li>
+                                                <li><a href="#">ایسر</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">لپ تاپ‌های سبک</a>
+                                            <ul class="gray">
+                                                <li><a href="#">مک‌بوک</a></li>
+                                                <li><a href="#">مایکروسافت</a></li>
+                                                <li><a href="#">سرفیس</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">لپ تاپ‌های ارزان</a>
+                                            <ul class="gray">
+                                                <li><a href="#">لپ تاپ دانشجویی</a></li>
+                                                <li><a href="#">لپ تاپ کارکرده</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">کیف لپ تاپ</a>
+                                            <ul class="gray">
+                                                <li><a href="#">کیف حمل</a></li>
+                                                <li><a href="#">کوله پشتی</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">کول پد</a>
+                                            <ul class="gray">
+                                                <li><a href="#">کول پد فعال</a></li>
+                                                <li><a href="#">کول پد غیرفعال</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="float-right w-1/4">
+                                        <li>
+                                            <a href="#">ماوس و کیبورد</a>
+                                            <ul class="gray">
+                                                <li><a href="#">ماوس بی‌سیم</a></li>
+                                                <li><a href="#">ماوس گیمینگ</a></li>
+                                                <li><a href="#">کیبورد مکانیکی</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">داک استیشن</a>
+                                            <ul class="gray">
+                                                <li><a href="#">داک USB-C</a></li>
+                                                <li><a href="#">داک تاندربولت</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- محتوای سایر دسته‌بندی‌ها -->
+                            <div id="home-appliances" class="category-content">
+                                <h1>
+                                    <a href="#">
+                                        همه محصولات لوازم خانگی
+                                    </a>
+                                </h1>
+                                <div class="row">
+                                    <!-- محتوای لوازم خانگی -->
+                                </div>
+                            </div>
+                            
+                            <!-- محتوای سایر دسته‌بندی‌ها به همین ترتیب -->
+                            
+                        </div>
+                    </div>
+                </li>
+                <li class="main-list">
+                    <a href="#" class="list-link">
+                        شگفت انگیز ها
+                    </a>
+                </li>
+                <li class="main-list">
+                    <a href="#" class="list-link">
+                        سوپر مارکت
+                    </a>
+                </li>
+                <li class="main-list">
+                    <a href="#" class="list-link">
+                        طلای دیجیتال
+                    </a>
+                </li>
+                <li class="main-list">
+                    <a href="#" class="list-link">
+                        پرفروشترین ها
+                    </a>
+                </li>
+                <li class="main-list">
+                    <a href="#" class="list-link">
+                        سوالی دارید
+                    </a>
+                </li>
+                <li class="main-list">
+                    <a href="#" class="list-link">
+                        فروشنده شوید
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryItems = document.querySelectorAll('.base-menu-list');
+            
+            categoryItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    // حذف کلاس active از همه آیتم‌ها
+                    categoryItems.forEach(i => i.classList.remove('active'));
+                    
+                    // اضافه کردن کلاس active به آیتم فعلی
+                    this.classList.add('active');
+                    
+                    // دریافت شناسه دسته‌بندی
+                    const categoryId = this.getAttribute('data-category');
+                    
+                    // مخفی کردن همه محتواها
+                    const allContents = document.querySelectorAll('.category-content');
+                    allContents.forEach(content => content.classList.remove('active'));
+                    
+                    // نمایش محتوای مربوطه
+                    const targetContent = document.getElementById(categoryId);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>animate.css</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #3498db;
+            margin: 30px;
+            display: inline-block;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .card {
+            width: 200px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .list-item {
+            padding: 10px;
+            background: #ecf0f1;
+            margin: 5px;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box animate__animated animate__bounce">انیمیشن Bounce</div>
+    <div class="box animate__animated animate__fadeIn">انیمیشن FadeIn</div>
+    <div class="box animate__animated animate__fadeInUp">Fade In Up</div>
+    <div class="box animate__animated animate__zoomIn">Zoom In</div>
+    <div class="box animate__animated animate__slideInDown">Slide In Down</div>
+    <!-- Exit -->
+    <div class="box animate__animated animate__fadeOut">Fade Out</div>
+    <div class="box animate__animated animate__zoomOut">Zoom Out</div>
+    <div class="box animate__animated animate__slideOutUp">Slide Out Up</div>
+    <!-- Attention Seekers -->
+    <div class="box animate__animated animate__pulse">Pulse</div>
+    <div class="box animate__animated animate__tada">Tada</div>
+    <div class="box animate__animated animate__wobble">Wobble</div>
+    <div class="box animate__animated animate__heartBeat">Heart Beat</div>
+    <!-- animate__repeat -->
+    <div class="box animate__animated animate__bounce animate__repeat-1">تکرار 1 بار</div>
+    <div class="box animate__animated animate__bounce animate__repeat-2">تکرار 2 بار</div>
+    <div class="box animate__animated animate__bounce animate__repeat-3">تکرار 3 بار</div>
+    <div class="box animate__animated animate__bounce animate__infinite">تکرار بی‌نهایت</div>
+    <!-- کارت با انیمیشن ورود: -->
+    <div class="card animate__animated animate__fadeInUp animate__delay-1s">
+        <h3>کارت نمونه</h3>
+        <p>این کارت با انیمیشن fadeInUp نمایش داده می‌شود</p>
+    </div>
+    <!-- دکمه با افکت پالس: -->
+    <button class="btn animate__animated animate__pulse animate__infinite animate__slower">
+        دکمه با پالس مداوم
+    </button>
+    <!-- لیست با انیمیشن مرحله‌ای: -->
+    <div class="list-item animate__animated animate__fadeInLeft">آیتم ۱</div>
+    <div class="list-item animate__animated animate__fadeInLeft animate__delay-1s">آیتم ۲</div>
+    <div class="list-item animate__animated animate__fadeInLeft animate__delay-2s">آیتم ۳</div>
+
+</body>
+
+</html>

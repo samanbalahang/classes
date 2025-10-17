@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hue-rotate</title>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background: linear-gradient(45deg, #e74c3c, #3498db, #f1c40f);
+                margin: 30px;
+                display: inline-block;
+                transition: filter 0.3s;
+            }
+
+            .rotate-90:hover {
+                filter: hue-rotate(90deg);
+            }
+
+            .rotate-180:hover {
+                filter: hue-rotate(180deg);
+            }
+
+            .rotate-360:hover {
+                filter: hue-rotate(360deg);
+            }
+        </style>
+</head>
+<body>
+
+
+<div class="box rotate-90">هاور کن - چرخش ۹۰ درجه</div>
+<div class="box rotate-180">هاور کن - چرخش ۱۸۰ درجه</div>
+<div class="box rotate-360">هاور کن - چرخش کامل</div>
+
+</body>
+</html>

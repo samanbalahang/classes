@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nth-of-type</title>
+    <style>
+        .container {
+            border: 2px solid #333;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        /* هر پاراگراف دوم از نوع خود */
+        p:nth-of-type(2) {
+            background-color: gold;
+            padding: 8px;
+        }
+
+        /* پاراگراف‌های فرد از نوع خود */
+        p:nth-of-type(odd) {
+            border-right: 3px solid blue;
+        }
+
+        /* پاراگراف‌های زوج از نوع خود */
+        p:nth-of-type(even) {
+            border-left: 3px solid green;
+        }
+
+        /* اسپن دوم از نوع خود */
+        span:nth-of-type(2) {
+            background-color: lightcoral;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>پاراگراف 1</p>
+        <span>اسپن 1</span>
+        <p>پاراگراف 2</p>
+        <div>دیو 1</div>
+        <p>پاراگراف 3</p>
+        <span>اسپن 2</span>
+        <p>پاراگراف 4</p>
+    </div>
+
+
+
+</body>
+
+</html>

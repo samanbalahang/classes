@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checked</title>
+    <style>
+        input[type="checkbox"]:checked,
+        input[type="radio"]:checked {
+            transform: scale(1.2);
+        }
+
+        input[type="checkbox"]:checked {
+            accent-color: green;
+        }
+
+        input[type="radio"]:checked {
+            accent-color: blue;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <label>
+            <input type="checkbox" name="option1"> گزینه اول
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="option2" checked> گزینه دوم (پیش‌انتخاب)
+        </label>
+        <br>
+
+        <label>
+            <input type="radio" name="gender" value="male"> مرد
+        </label>
+        <br>
+
+        <label>
+            <input type="radio" name="gender" value="female" checked> زن (پیش‌انتخاب)
+        </label>
+        <br>
+
+        <input type="submit" value="درج">
+    </form>
+
+
+</body>
+
+</html>

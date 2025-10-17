@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nth-child</title>
+    <style>
+        li:nth-child(3) {
+        background-color: red;
+        color: white;
+        }
+
+        li:nth-child(2n) {
+            /* n start from zero so 2n mean 0 2 4 6  */
+        background-color: #f0f0f0;
+        }
+
+        li:nth-child(2n+1) {
+           /* n start from zero so 2n+1 mean 1 3 5 7  */
+            background-color: #e0e0e0;
+        }
+
+        li:nth-child(even) {
+        border-right: 3px solid blue;
+        }
+
+        li:nth-child(odd) {
+        border-left: 3px solid green;
+        }
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li>آیتم 1</li>
+        <li>آیتم 2</li>
+        <li>آیتم 3</li>
+        <li>آیتم 4</li>
+        <li>آیتم 5</li>
+        <li>آیتم 6</li>
+    </ul>
+
+
+</body>
+</html>

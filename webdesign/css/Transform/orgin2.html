@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>origin</title>
+        <style>
+    .scene {
+        perspective: 1000px;
+        perspective-origin: center center;
+        margin: 50px;
+    }
+    
+    .box {
+        width: 100px;
+        height: 100px;
+        background: #e67e22;
+        margin: 30px;
+        display: inline-block;
+        transition: transform 0.5s;
+    }
+
+    .view-top:hover {
+        transform: rotateX(45deg);
+    }
+    
+    .view-left:hover {
+        transform: rotateY(45deg);
+    }
+    
+    /* تغییر نقطه نگاه */
+    .scene-different {
+        perspective: 1000px;
+        perspective-origin: left top;
+        margin: 50px;
+    }
+</style>
+</head>
+<body>
+
+
+<div class="scene">
+    <div class="box view-top">هاور کن - نگاه از مرکز</div>
+    <div class="box view-left">هاور کن - چرخش از مرکز</div>
+</div>
+
+<div class="scene-different">
+    <div class="box view-top">هاور کن - نگاه از بالا-چپ</div>
+    <div class="box view-left">هاور کن - چرخش از بالا-چپ</div>
+</div>
+
+</body>
+</html>

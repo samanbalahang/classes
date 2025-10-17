@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delay</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #e74c3c;
+            margin: 30px;
+            display: inline-block;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .no-delay {
+            animation: fade-in 2s infinite;
+        }
+
+        .delay-1s {
+            animation: fade-in 2s 1s infinite;
+        }
+
+        .delay-2s {
+            animation: fade-in 2s 2s infinite;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box no-delay">بدون تأخیر</div>
+    <div class="box delay-1s">تأخیر 1s</div>
+    <div class="box delay-2s">تأخیر 2s</div>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        combine
+    </title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            height: 2000px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .header {
+            position: sticky;
+            top: 0;
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            z-index: 1000;
+            text-align: center;
+        }
+        
+        .container {
+            position: relative;
+            width: 80%;
+            height: 400px;
+            margin: 50px auto;
+            border: 2px solid #34495e;
+            background: #ecf0f1;
+        }
+        
+        .relative-box {
+            position: relative;
+            top: 20px;
+            left: -30px;
+            width: 200px;
+            height: 100px;
+            background: #3498db;
+            color: white;
+            padding: 10px;
+        }
+        
+        .absolute-box {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 150px;
+            height: 150px;
+            background: #e74c3c;
+            color: white;
+            padding: 10px;
+            z-index: 10;
+        }
+        
+        .fixed-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #27ae60;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 900;
+        }
+        
+        .tooltip {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">هدر Sticky - هنگام اسکرول می‌چسبد</div>
+    
+    <div class="container">
+        <div class="relative-box">
+            جعبه Relative
+            <div class="tooltip">Tooltip با Absolute</div>
+        </div>
+        
+        <div class="absolute-box">جعبه Absolute</div>
+    </div>
+    
+    <button class="fixed-button">دکمه Fixed</button>
+</body>
+</html>

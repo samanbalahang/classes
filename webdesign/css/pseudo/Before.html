@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before</title>
+    <style>
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .note::before {
+            content: "📌 ";
+            color: red;
+            font-weight: bold;
+        }
+
+        .item::before {
+            content: "✔ ";
+            color: green;
+            margin-left: 10px;
+        }
+
+        .price::before {
+            content: "قیمت: ";
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="note">این یک یادداشت مهم است</p>
+
+    <ul>
+        <li class="item">آیتم اول</li>
+        <li class="item">آیتم دوم</li>
+        <li class="item">آیتم سوم</li>
+    </ul>
+
+    <div class="price">۵۰,۰۰۰ تومان</div>
+
+
+
+</body>
+
+</html>

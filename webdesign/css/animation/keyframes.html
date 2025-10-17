@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyframes</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #3498db;
+            margin: 30px;
+            display: inline-block;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(200px);
+            }
+        }
+
+        @keyframes color-change {
+            0% {
+                background: #3498db;
+            }
+
+            50% {
+                background: #e74c3c;
+            }
+
+            100% {
+                background: #2ecc71;
+            }
+        }
+
+        .move-animation {
+            animation: move 3s infinite;
+        }
+
+        .color-animation {
+            animation: color-change 4s infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="box move-animation">حرکت افقی</div>
+    <div class="box color-animation">تغییر رنگ</div>
+
+</body>
+
+</html>

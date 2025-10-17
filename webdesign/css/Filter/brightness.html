@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brightness</title>
+    <style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background: #e74c3c;
+        margin: 30px;
+        display: inline-block;
+        transition: filter 0.3s;
+    }
+
+    .dark:hover {
+        filter: brightness(0.5);
+    }
+
+    .normal:hover {
+        filter: brightness(1);
+    }
+
+    .bright:hover {
+        filter: brightness(1.5);
+    }
+
+    .very-bright:hover {
+        filter: brightness(2);
+    }
+</style>
+
+</head>
+<body>
+
+<div class="box dark">هاور کن - تاریک</div>
+<div class="box normal">هاور کن - نرمال</div>
+<div class="box bright">هاور کن - روشن</div>
+<div class="box very-bright">هاور کن - بسیار روشن</div>
+</body>
+</html>

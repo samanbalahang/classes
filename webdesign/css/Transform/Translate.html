@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+    <style>
+        .button {
+            display: block;
+            width: 250px;
+            background-color: #034e03;
+            text-align: center;
+            color: white;
+            padding: 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: transform 0.3s;
+            transition: all 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translate(10px, 20px);
+            /* یا به صورت جداگانه:
+            transform: translateX(10px) translateY(20px);
+            */
+        }
+
+    </style>
+</head>
+<body>
+    <a href="#" class="button">
+        دکمه
+    </a>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلایدر تصاویر - Swiper.js</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .slider-container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin: 50px auto;
+        }
+        
+        .slider-title {
+            text-align: center;
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .swiper {
+            width: 100%;
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .swiper-slide {
+            position: relative;
+            background: #f8f9fa;
+        }
+        
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 40px 30px 30px;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .swiper-slide-active .slide-content {
+            transform: translateY(0);
+        }
+        
+        .slide-title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .slide-description {
+            font-size: 1.1em;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: white;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #667eea;
+            opacity: 1;
+            transform: scale(1.2);
+        }
+        
+        .swiper-button-next, .swiper-button-prev {
+            color: white;
+            background: rgba(102, 126, 234, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background: #667eea;
+            transform: scale(1.1);
+        }
+        
+        /* کلاس‌های مخصوص تصاویر */
+        .nature-image {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+        }
+        
+        .mountain-image {
+            background: linear-gradient(45deg, #43e97b, #38f9d7);
+        }
+        
+        .city-image {
+            background: linear-gradient(45deg, #fa709a, #fee140);
+        }
+        
+        .beach-image {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+        
+        .forest-image {
+            background: linear-gradient(45deg, #96e6a1, #d4fc79);
+        }
+        
+        /* استایل برای نمایش روی موبایل */
+        @media (max-width: 768px) {
+            .swiper {
+                height: 400px;
+            }
+            
+            .slider-title {
+                font-size: 2em;
+            }
+            
+            .slide-title {
+                font-size: 1.5em;
+            }
+            
+            .slide-description {
+                font-size: 1em;
+            }
+            
+            .swiper-button-next, .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .swiper {
+                height: 300px;
+            }
+            
+            .slider-title {
+                font-size: 1.8em;
+            }
+            
+            .slide-content {
+                padding: 20px 15px 15px;
+            }
+            
+            .slide-title {
+                font-size: 1.3em;
+            }
+            
+            .slide-description {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <h1 class="slider-title">گالری تصاویر زیبا</h1>
+        
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- اسلاید ۱ -->
+                <div class="swiper-slide">
+                    <div class="slide-image nature-image"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">طبیعت بکر</h2>
+                        <p class="slide-description">منظره‌ای زیبا از طبیعت دست‌نخورده و رودخانه‌های خروشان</p>
+                    </div>
+                </div>
+                
+                <!-- اسلاید ۲ -->
+                <div class="swiper-slide">
+                    <div class="slide-image mountain-image"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">کوه‌های سر به فلک کشیده</h2>
+                        <p class="slide-description">نمایی باشکوه از قله‌های برفی و ابرهای سفید</p>
+                    </div>
+                </div>
+                
+                <!-- اسلاید ۳ -->
+                <div class="swiper-slide">
+                    <div class="slide-image city-image"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">شهر مدرن</h2>
+                        <p class="slide-description">نمای شبانه شهر با آسمان‌خراش‌های درخشان</p>
+                    </div>
+                </div>
+                
+                <!-- اسلاید ۴ -->
+                <div class="swiper-slide">
+                    <div class="slide-image beach-image"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">ساحل طلایی</h2>
+                        <p class="slide-description">دریای آبی و شن‌های طلایی در غروب آفتاب</p>
+                    </div>
+                </div>
+                
+                <!-- اسلاید ۵ -->
+                <div class="swiper-slide">
+                    <div class="slide-image forest-image"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">جنگل اسرارآمیز</h2>
+                        <p class="slide-description">عمق جنگل با درختان سرسبز و نورهای طلایی</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- نقاط pagination -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- دکمه‌های navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // راه‌اندازی Swiper
+        var swiper = new Swiper(".mySwiper", {
+            // تنظیمات پایه
+            direction: 'horizontal',
+            loop: true,
+            speed: 800,
+            grabCursor: true,
+            
+            // اتوپلی
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+            
+            // pagination (نقاط)
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+                }
+            },
+            
+            // navigation (دکمه‌ها)
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            
+            // افکت‌ها
+            effect: 'slide',
+            fadeEffect: {
+                crossFade: true
+            },
+            
+            // breakpoints برای ریسپانسیو
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                }
+            },
+            
+            // رویدادها
+            on: {
+                init: function () {
+                    console.log('Swiper initialized successfully!');
+                },
+                slideChange: function () {
+                    console.log('Slide changed to: ', this.activeIndex);
+                }
+            }
+        });
+        
+        // متوقف کردن اتوپلی وقتی ماوس روی اسلایدر است
+        const swiperContainer = document.querySelector('.swiper');
+        swiperContainer.addEventListener('mouseenter', function() {
+            swiper.autoplay.stop();
+        });
+        
+        swiperContainer.addEventListener('mouseleave', function() {
+            swiper.autoplay.start();
+        });
+    </script>
+</body>
+</html>

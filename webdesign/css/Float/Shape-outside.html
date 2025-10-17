@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش Shape-outside</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            border: 2px solid #333;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .circle {
+            width: 200px;
+            height: 200px;
+            float: left;
+            shape-outside: circle(50%);
+            clip-path: circle(50%);
+            background-color: #9C27B0;
+            margin: 0 20px 20px 0;
+        }
+        
+        .triangle {
+            width: 200px;
+            height: 200px;
+            float: right;
+            shape-outside: polygon(0 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+            background-color: #F44336;
+            margin: 0 0 20px 20px;
+        }
+        
+        .content {
+            text-align: justify;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <div class="container">
+        <div class="circle"></div>
+        <div class="triangle"></div>
+        <div class="content">
+            <h2>مثال ویژگی shape-outside</h2>
+            <p>در این مثال، از ویژگی shape-outside برای ایجاد شکل‌های غیرمستطیلی استفاده شده است. عنصر بنفش یک دایره است و عنصر قرمز یک مثلث. متن به طور خودکار در اطراف این شکل‌ها جریان می‌یابد و طرح‌بندی جذابی ایجاد می‌کند.</p>
+            <p>ویژگی shape-outside به طراحان این امکان را می‌دهد که طرح‌بندی‌های خلاقانه‌تری ایجاد کنند و متن را به شکل‌های غیرمعمول در اطراف عناصر جریان دهند.</p>
+            <p>برای نمایش بصری شکل‌ها، از ویژگی clip-path نیز استفاده شده است که شکل عنصر را به شکل تعریف شده در shape-outside محدود می‌کند.</p>
+        </div>
+    </div>
+</body>
+</html>

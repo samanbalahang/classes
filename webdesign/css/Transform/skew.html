@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skew</title>
+    <style>
+        .text-box {
+            width: 50%;
+            border: 1px solid black;
+            background-color: lightblue;
+            transition: transform 0.3s;
+        }
+
+        .text-box:hover {
+            transform: skewX(15deg);
+            /* یا:
+            transform: skew(15deg, 5deg);
+            */
+        }
+
+    </style>
+</head>
+<body>
+<p class="text-box">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo aperiam magni earum aspernatur error autem, porro repellendus iure. Molestias dicta asperiores alias odio natus quibusdam vel illo dolores ad placeat?
+</p>
+</body>
+</html>

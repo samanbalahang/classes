@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation-duration</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #e67e22;
+            margin: 30px;
+            display: inline-block;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(100px);
+            }
+        }
+
+        .fast {
+            animation-name: slide;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+        }
+
+        .slow {
+            animation-name: slide;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box fast">سریع (0.5s)</div>
+    <div class="box slow">آهسته (3s)</div>
+</body>
+
+</html>

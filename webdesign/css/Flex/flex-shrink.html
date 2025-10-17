@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-shrink</title>
+        <style>
+    .container {
+        display: flex;
+        width: 400px;
+        border: 2px solid #333;
+        margin: 20px 0;
+        padding: 10px;
+    }
+    
+    .item {
+        width: 200px;
+        padding: 20px;
+        margin: 5px;
+        background: #8BC34A;
+        color: white;
+        text-align: center;
+    }
+    
+    .shrink-0 { flex-shrink: 0; }   /* جمع نمی‌شود */
+    .shrink-1 { flex-shrink: 1; }   /* جمع شدن نرمال */
+    .shrink-2 { flex-shrink: 2; }   /* دو برابر جمع می‌شود */
+</style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="item shrink-0">عدم جمع شدن</div>
+    <div class="item shrink-1">جمع شدن نرمال</div>
+    <div class="item shrink-2">جمع شدن دوبرابر</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perspective</title>
+    <style>
+        .container {
+            perspective: 800px;
+            margin: 50px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #9b59b6;
+            margin: 30px;
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        .rotate-3d:hover {
+            transform: rotateY(45deg);
+        }
+
+        .deep-perspective:hover {
+            transform: rotateX(60deg);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="box rotate-3d">هاور کن - چرخش سه‌بعدی</div>
+        <div class="box deep-perspective">هاور کن - عمق بیشتر</div>
+    </div>
+
+</body>
+
+</html>

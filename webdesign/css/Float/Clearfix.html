@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        clearfix
+    </title>
+    <style>
+        .parent {
+            border: 2px solid red;
+            background: #f0f0f0;
+            margin: 10px;
+            padding: 10px;
+        }
+        
+        .child {
+            float: right;
+            width: 100px;
+            height: 100px;
+            background: blue;
+            margin: 10px;
+        }
+        
+        /* Clearfix ساده */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>بدون Clearfix (مشکل)</h3>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+    <h3>با Clearfix (حل شده)</h3>
+    <div class="parent clearfix">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+</body>
+</html>

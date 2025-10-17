@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iteration</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #3498db;
+            margin: 30px;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .once {
+            animation: pulse 1s 1;
+        }
+
+        .three-times {
+            animation: pulse 1s 3;
+        }
+
+        .infinite {
+            animation: pulse 1s infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="box once">یک بار</div>
+    <div class="box three-times">سه بار</div>
+    <div class="box infinite">بی‌نهایت</div>
+
+</body>
+
+</html>

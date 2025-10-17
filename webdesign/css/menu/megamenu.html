@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه اینترنتی - مگامنو</title>
+    <style>
+        /* استایل‌های پایه */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* هدر */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .header-top {
+            padding: 0 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+       .search-box input {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+
+        .search-box button {
+            padding: 0.8rem 1.5rem;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .user-actions a {
+            color: white;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+
+        /* مگامنو */
+        .mega-menu {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .mega-menu-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .main-nav {
+            list-style: none;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 1.2rem 1.5rem;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: #3498db;
+            border-bottom: 3px solid #3498db;
+            background: #f8f9fa;
+        }
+
+        /* محتوای مگامنو */
+        .mega-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-top: 3px solid #3498db;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            padding: 2rem;
+        }
+
+        .mega-content-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .mega-column{
+            float: left;
+            width: 25%;
+        }
+        .mega-content-grid::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .mega-column h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .mega-column ul {
+            list-style: none;
+        }
+
+        .mega-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mega-column a {
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 0.3rem 0;
+        }
+
+        .mega-column a:hover {
+            color: #3498db;
+            padding-right: 0.5rem;
+        }
+        .nav-item{
+            display: inline-block;
+            width: fit-content;
+        }
+        /* نمایش مگامنو */
+        .nav-item:hover .mega-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* محتوای اصلی */
+        .main-content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .main-content h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .main-content p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر سایت -->
+    <header>
+        <div class="header-top">
+            <div class="logo">فروشگاه اینترنتی</div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="جستجوی محصولات...">
+                <button>جستجو</button>
+            </div>
+            
+            <div class="user-actions">
+                <a href="#">ورود</a>
+                <a href="#">ثبت نام</a>
+                <a href="#">سبد خرید</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- مگامنو -->
+    <nav class="mega-menu">
+        <div class="mega-menu-container">
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">کالای دیجیتال</a>
+                    <div class="mega-content">
+                        <div class="mega-content-grid">
+                            <div class="mega-column">
+                                <h3>موبایل و تبلت</h3>
+                                <ul>
+                                    <li><a href="#">گوشی موبایل</a></li>
+                                    <li><a href="#">تبلت</a></li>
+                                    <li><a href="#">لوازم جانبی موبایل</a></li>
+                                    <li><a href="#">سیم کارت</a></li>
+                                    <li><a href="#">قاب و کاور</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h3>لپ تاپ و کامپیوتر</h3>
+                                <ul>
+                                    <li><a href="#">لپ تاپ</a></li>
+                                    <li><a href="#">کامپیوتر رومیزی</a></li>
+                                    <li><a href="#">مانیتور</a></li>
+                                    <li><a href="#">قطعات کامپیوتر</a></li>
+                                    <li><a href="#">پرینتر و اسکنر</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h3>صوتی و تصویری</h3>
+                                <ul>
+                                    <li><a href="#">تلویزیون</a></li>
+                                    <li><a href="#">هدفون و هدست</a></li>
+                                    <li><a href="#">اسپیکر</a></li>
+                                    <li><a href="#">سیستم صوتی</a></li>
+                                    <li><a href="#">دوربین</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h3>گیمینگ</h3>
+                                <ul>
+                                    <li><a href="#">کنسول بازی</a></li>
+                                    <li><a href="#">دسته بازی</a></li>
+                                    <li><a href="#">گیم پی سی</a></li>
+                                    <li><a href="#">نرم افزار بازی</a></li>
+                                    <li><a href="#">تجهیزات گیمینگ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">پوشاک</a>
+                    <div class="mega-content">
+                        <div class="mega-content-grid">
+                            <div class="mega-column">
+                                <h3>مردانه</h3>
+                                <ul>
+                                    <li><a href="#">پیراهن</a></li>
+                                    <li><a href="#">شلوار</a></li>
+                                    <li><a href="#">تیشرت</a></li>
+                                    <li><a href="#">کت و شلوار</a></li>
+                                    <li><a href="#">کفش</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h3>زنانه</h3>
+                                <ul>
+                                    <li><a href="#">لباس مجلسی</a></li>
+                                    <li><a href="#">بلوز و شلوار</a></li>
+                                    <li><a href="#">مانتو</a></li>
+                                    <li><a href="#">شال و روسری</a></li>
+                                    <li><a href="#">کفش</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h3>بچه گانه</h3>
+                                <ul>
+                                    <li><a href="#">پسرانه</a></li>
+                                    <li><a href="#">دخترانه</a></li>
+                                    <li><a href="#">نوزاد</a></li>
+                                    <li><a href="#">اسباب بازی</a></li>
+                                    <li><a href="#">کفش کودک</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h3>ورزشی</h3>
+                                <ul>
+                                    <li><a href="#">لباس ورزشی</a></li>
+                                    <li><a href="#">کفش ورزشی</a></li>
+                                    <li><a href="#">تجهیزات ورزشی</a></li>
+                                    <li><a href="#">کوله پشتی</a></li>
+                                    <li><a href="#">کلاه و عینک</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">خانه و آشپزخانه</a>
+                    <div class="mega-content">
+                        <div class="mega-content-grid">
+                            <div class="mega-column">
+                                <h3>لوازم خانگی</h3>
+                                <ul>
+                                    <li><a href="#">یخچال و فریزر</a></li>
+                                    <li><a href="#">ماشین لباسشویی</a></li>
+                                    <li><a href="#">اجاق گاز</a></li>
+                                    <li><a href="#">مایکروویو</a></li>
+                                    <li><a href="#">هود</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h3>دکوراسیون</h3>
+                                <ul>
+                                    <li><a href="#">مبلمان</a></li>
+                                    <li><a href="#">پرده</a></li>
+                                    <li><a href="#">فرش و گلیم</a></li>
+                                    <li><a href="#">آینه و تابلو</a></li>
+                                    <li><a href="#">ساعت دیواری</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h3>آشپزخانه</h3>
+                                <ul>
+                                    <li><a href="#">ظروف آشپزخانه</a></li>
+                                    <li><a href="#">قابلمه و تابه</a></li>
+                                    <li><a href="#">چاقو</a></li>
+                                    <li><a href="#">لوازم برقی</a></li>
+                                    <li><a href="#">سرویس ظروف</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-column">
+                                <h3>خواب و حمام</h3>
+                                <ul>
+                                    <li><a href="#">رختخواب</a></li>
+                                    <li><a href="#">ملحفه</a></li>
+                                    <li><a href="#">پتو</a></li>
+                                    <li><a href="#">لوازم حمام</a></li>
+                                    <li><a href="#">حوله</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">سوپرمارکت</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">فروش ویژه</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- محتوای اصلی -->
+    <main class="main-content">
+        <h1>به فروشگاه اینترنتی ما خوش آمدید</h1>
+        <p>این یک سایت نمونه با مگامنو است. روی آیتم‌های منو هاور کنید تا مگامنوهای مختلف را مشاهده کنید.</p>
+        <p>مگامنوها محتوای گسترده‌ای از دسته‌بندی‌های مختلف را نمایش می‌دهند.</p>
+    </main>
+</body>
+</html>

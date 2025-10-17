@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media query</title>
+    <style>
+/* استایل پایه برای همه دستگاه‌ها */
+.container {
+  width: 100%;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+/* برای دستگاه‌های با عرض کمتر از 768px */
+@media (max-width: 768px) {
+  .container {
+    background-color: #e0e0e0;
+    padding: 10px;
+  }
+}
+
+/* برای دستگاه‌های با عرض بیشتر از 1200px */
+@media (min-width: 1200px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #d0d0d0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <p>این یک محتوای نمونه است که بر اساس اندازه صفحه تغییر می‌کند.</p>
+</div>
+
+</body>
+</html>

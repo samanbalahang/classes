@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-content</title>
+        <style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 300px;
+        width: 400px;
+        border: 2px solid #333;
+        margin: 20px 0;
+    }
+    
+    .item {
+        width: 180px;
+        padding: 20px;
+        margin: 5px;
+        background: #795548;
+        color: white;
+        text-align: center;
+    }
+    
+    .content-start { align-content: flex-start; }
+    .content-center { align-content: center; }
+    .content-between { align-content: space-between; }
+</style>
+</head>
+<body>
+
+
+<div class="container content-start">
+    <div class="item">خط ۱</div>
+    <div class="item">خط ۲</div>
+    <div class="item">خط ۳</div>
+</div>
+
+<div class="container content-center">
+    <div class="item">خط ۱</div>
+    <div class="item">خط ۲</div>
+    <div class="item">خط ۳</div>
+</div>
+
+</body>
+</html>
